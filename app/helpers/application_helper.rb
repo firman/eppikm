@@ -9,4 +9,15 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
     end
+
+    def logo
+    logo_title = image_tag("rails.png")
+    logo_ganti = "E-PPIKM"
+    if @logo.nil?
+      logo_ganti
+    else
+      "logo_title"
+    end
+    end
 end
+
