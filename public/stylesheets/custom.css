@@ -211,7 +211,7 @@ h1 {
 #store .entry .price {
   color: #44a ;
   font-weight: bold;
-  margin-right: 2em;
+  margin-right: 1em;
 }
   #store .entry form, #store .entry form div {
      display: inline;

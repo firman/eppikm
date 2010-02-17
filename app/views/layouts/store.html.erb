@@ -4,6 +4,7 @@
   <head>
     <title><%= title %></title>
     <%= render 'layouts/stylesheets' %>
+
   </head>
   <body id="store">
     <div class="container">
@@ -13,10 +14,19 @@
           <div id="columns">
             <div id="side">
 
+              <div id="cart">
+                <%= render(:partial => "cart" , :object => @cart) %>
+              </div>
+
             </div>
           </div>
 
           <div id="main">
+
+          <% if flash[:notice] -%>
+            <div id="notice"><%= flash[:notice] %></div>
+          <% end -%>
+
             <%= yield %>
           </div>
 
