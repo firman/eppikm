@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 20100217153542
+#
+# Table name: orders
+#
+#  id         :integer(4)      not null, primary key
+#  nama       :string(255)
+#  email      :string(255)
+#  alamat     :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Order < ActiveRecord::Base
   validates_presence_of :nama, :email, :alamat
 
