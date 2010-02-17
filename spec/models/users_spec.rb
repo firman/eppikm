@@ -13,17 +13,17 @@
 
 require 'spec_helper'
 
-describe Users do
   before(:each) do
-    @valid_attributes = {
-      :name => "value for name",
-      :email => "value for email",
-      :alamat => "value for alamat",
-      :no_kontak => 1
-    }
+    @attr = { :name => "Example User", :email => "user@example.com" }
   end
 
   it "should create a new instance given valid attributes" do
-    Users.create!(@valid_attributes)
+    User.create!(@attr)
+  end
+
+  it "should require a name"
+    no_name_user = User.new(@attr.merge(:name => ""))
+    no_name_user.should_not be_valid
   end
 end
+

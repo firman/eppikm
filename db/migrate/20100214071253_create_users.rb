@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.text :alamat
-      t.int :no_kontak
+      t.int :nokontak
 
       t.timestamps
     end
@@ -14,3 +14,4 @@ class CreateUsers < ActiveRecord::Migration
     drop_table :users
   end
 end
+
