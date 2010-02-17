@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20100217073339
+#
+# Table name: products
+#
+#  id          :integer(4)      not null, primary key
+#  title       :string(255)
+#  description :text
+#  image_url   :string(255)
+#  seller      :string(255)
+#  price       :integer(10)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Product < ActiveRecord::Base
 
   def self.find_products_for_sale
