@@ -1,0 +1,23 @@
+<div class="depot-form">
+  <%= error_messages_for 'order' %>
+  <fieldset>
+    <legend>Silahkan Isi data anda</legend>
+    <% form_for :order, :url => { :action => :save_order } do |form| %>
+      <p>
+        <%= label :order, :nama, "Nama:" %>
+        <%= form.text_field :nama, :size => 40 %>
+      </p>
+      <p>
+        <%= label :order, :alamat, "Alamat:" %>
+        <%= form.text_area :alamat, :rows => 3, :cols => 40 %>
+      </p>
+      <p>
+        <%= label :order, :email, "E-Mail:" %>
+        <%= form.text_field :email, :size => 40 %>
+      </p>
+
+       <%= submit_tag "Place Order" , :class => "pesan" %>
+    <% end %>
+  </fieldset>
+</div>
+
