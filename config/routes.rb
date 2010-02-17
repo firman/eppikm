@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :products
+
   map.resources :users
 
   map.about '/about', :controller => 'pages', :action => 'about'
