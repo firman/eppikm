@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @title = "About"
+    @title = "About PPIKM"
   end
 
   def help
@@ -12,3 +12,4 @@ class PagesController < ApplicationController
   end
 
 end
+
