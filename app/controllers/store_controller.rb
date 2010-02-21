@@ -21,7 +21,7 @@ end
   def checkout
     @cart = find_cart
     if @cart.items.empty?
-      redirect_to_index("Your cart is empty")
+      redirect_to_index("cart anda kosong")
     else
       @order = Order.new
     end
@@ -33,7 +33,7 @@ end
     @order.add_line_items_from_cart(@cart)
     if @order.save
       session[:cart] = nil
-      redirect_to_index("Thank you for your order")
+      redirect_to_index("Terima kasih atas ordernya")
     else
       render :action => 'checkout'
     end
@@ -41,7 +41,7 @@ end
 
   def empty_cart
     session[:cart] = nil
-    redirect_to_index("Keranjang belanjanya sekarang kosong")
+    redirect_to_index("Cart anda sekarang kosong")
   end
 
 private

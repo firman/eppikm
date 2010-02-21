@@ -14,12 +14,12 @@
 
 class User < ActiveRecord::Base
  attr_accessor :password
- attr_accessible :name, :email, :alamat, :nokontak, :password, :password_confirmation
+ attr_accessible :name, :email, :alamat, :password, :password_confirmation
 
 
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates_presence_of :name, :email, :alamat, :nokontak
+  validates_presence_of :name, :email, :alamat
   validates_length_of   :name, :maximum => 50
   validates_length_of   :alamat, :maximum => 100
   validates_format_of   :email, :with => EmailRegex
@@ -32,14 +32,16 @@ class User < ActiveRecord::Base
   validates_length_of   :password, :within => 6..40
 
   before_save :encrypt_password
-def has_password?(submitted_password)
-  encrypted_password == encrypt(submitted_password)
-end
-def self.authenticate(email, submitted_password)
-  user = find_by_email(email)
-  return nil if user.nil?
-  return user if user.has_password?(submitted_password)
-end
+
+  def has_password?(submitted_password)
+    encrypted_password == encrypt(submitted_password)
+  end
+
+  def self.authenticate(email, submitted_password)
+    user = find_by_email(email)
+    return nil if user.nil?
+    return user if user.has_password?(submitted_password)
+  end
 
 private
   def encrypt_password

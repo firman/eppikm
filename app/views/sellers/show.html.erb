@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @seller.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @seller.email %>
+</p>
+
+<p>
+  <b>Alamat:</b>
+  <%=h @seller.alamat %>
+</p>
+
+<p>
+  <b>Hashed password:</b>
+  <%=h @seller.hashed_password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%=h @seller.salt %>
+</p>
+
+
+<%= link_to 'Edit', edit_seller_path(@seller) %> |
+<%= link_to 'Back', sellers_path %>

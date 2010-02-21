@@ -1,4 +1,4 @@
-<div class="cart-title">Your Cart</div>
+<div class="cart-title">Cart anda</div>
 <table>
   <%= render(:partial => "cart_item" , :collection => @cart.items) %>
   <tr class="total-line">
@@ -6,5 +6,5 @@
     <td class="total-cell"><%= number_to_currency(@cart.total_price) %></td>
   </tr>
 </table>
-<%= button_to "Empty cart" , :action => :empty_cart %>
+<%= button_to "Kosongkan cart" , :action => :empty_cart %>
 
