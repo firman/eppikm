@@ -4,8 +4,8 @@
     <legend>Silahkan Isi data anda</legend>
     <% form_for :order, :url => { :action => :save_order } do |form| %>
       <p>
-        <%= label :order, :name, "Nama:" %>
-        <%= form.text_field :name, :size => 40 %>
+        <%= label :order, :nama, "Nama:" %>
+        <%= form.text_field :nama, :size => 40 %>
       </p>
       <p>
         <%= label :order, :alamat, "Alamat:" %>

@@ -1,15 +1,16 @@
 # == Schema Information
-# Schema version: 20100217153542
+# Schema version: 20100221151456
 #
 # Table name: users
 #
-#  id         :integer(4)      not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  alamat     :text
-#  created_at :datetime
-#  updated_at :datetime
-#  salt       :string(255)
+#  id                 :integer(4)      not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  alamat             :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  salt               :string(255)
+#  encrypted_password :string(255)
 #
 
 require 'spec_helper'
