@@ -12,11 +12,22 @@ class ApplicationController < ActionController::Base
   protect_from_forgery :secret => '7tWDI95y4WTOn4oGQJKSrxkUpJmldD60wexlJu1XvYo'
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
+
+  def create
+    @user = User.new(params[:user])
+     if @user.save
+       redirect_to @user
+     else
+       @title = "Sign up"
+       render 'new'
+     end
+  end
+
 
   protected
   def authorize
-    unless User.find_by_id(session[:seller_id])
+    unless Seller.find_by_id(session[:seller_id])
       flash[:notice] = "Please log in"
       redirect_to :controller => :admin, :action => :login
     end
