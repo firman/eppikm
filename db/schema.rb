@@ -9,7 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100221151456) do
+ActiveRecord::Schema.define(:version => 20100223015430) do
+
+  create_table "beritas", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "forum_posts", :force => true do |t|
+    t.string   "name",       :limit => 50,                :null => false
+    t.string   "subject",                                 :null => false
+    t.text     "body"
+    t.integer  "root_id",                  :default => 0, :null => false
+    t.integer  "parent_id",                :default => 0, :null => false
+    t.integer  "lft",                      :default => 0, :null => false
+    t.integer  "rgt",                      :default => 0, :null => false
+    t.integer  "depth",                    :default => 0, :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+  end
 
   create_table "line_items", :force => true do |t|
     t.integer  "product_id",                                :null => false

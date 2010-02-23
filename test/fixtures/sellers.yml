@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100221151456
+# Schema version: 20100223015430
 #
 # Table name: sellers
 #

@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
+
   def index
     @title = "Produk"
     @products = Product.all
@@ -26,7 +27,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.xml
   def new
-    @title = "Tambah Produk"
+    @title = "Tambah Produk Baru"
     @product = Product.new
 
     respond_to do |format|
@@ -79,7 +80,7 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1
   # DELETE /products/1.xml
-  def destroyd
+  def destroy
     @title = "Delete Produk"
     @product = Product.find(params[:id])
     @product.destroy
