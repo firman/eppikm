@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.xml
 
   def index
-    @title = "Produk"
+    @title = "Index Produk"
     @products = Product.all
 
     respond_to do |format|

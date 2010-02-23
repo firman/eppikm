@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @berita.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @berita.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_berita_path(@berita) %> |
+<%= link_to 'Back', beritas_path %>

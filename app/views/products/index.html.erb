@@ -1,5 +1,5 @@
 <div id="product-list">
-  <h1>Listing products</h1>
+  <h1>Dafter Produk</h1>
   <table cellpadding="5" cellspacing="0">
 
   <% for product in @products %>
@@ -18,7 +18,7 @@
          <%= link_to 'Show', product %><br/>
          <%= link_to 'Edit', edit_product_path(product) %><br/>
          <%= link_to 'Destroy', product,
-                     :confirm => 'Are you sure?',
+                     :confirm => 'Yakin nih, produk ini dihapus?',
                      :method => :delete %>
        </td>
 
@@ -27,5 +27,5 @@
   </table>
 </div>
 <br />
-<%= link_to 'New product', new_product_path %>
+<%= link_to 'Bikin produk baru', new_product_path %>
 

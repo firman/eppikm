@@ -1,0 +1,28 @@
+<div id="product-list">
+  <h1>Dafter Berita</h1>
+  <table cellpadding="5" cellspacing="0">
+
+  <% for berita in @beritas %>
+    <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+
+
+       <td width="60%">
+         <span class="list-title"><%=h berita.title %></span><br />
+         <%=h truncate(berita.content.gsub(/<.*?>/,''), 80) %>
+       </td>
+
+<td class="list-actions">
+         <%= link_to 'Show', berita %><br/>
+         <%= link_to 'Edit', edit_berita_path(berita) %><br/>
+         <%= link_to 'Destroy', berita,
+                     :confirm => 'Yakin nih, berita ini dihapus?',
+                     :method => :delete %>
+       </td>
+
+    </tr>
+  <% end %>
+  </table>
+</div>
+<br />
+<%= link_to 'Bikin berita baru', new_berita_path %>
+
