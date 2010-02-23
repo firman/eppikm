@@ -1,0 +1,167 @@
+# Logfile created on Mon Jan 22 07:45:04 CST 2007 by logger.rb/1.5.2.7
+Migrating to Beta1Schema (1)
+Migrating to Beta2ChangesBulk (2)
+Migrating to Beta1Schema (1)
+Migrating to Beta2ChangesBulk (2)
+
+
+Processing WikiController#index (for 127.0.0.1 at 2010-02-23 13:18:48) [GET]
+Redirected to http://0.0.0.0:2500/create_system
+Completed in 96ms (DB: 15) | 302 Found [http://0.0.0.0/]
+
+
+Processing AdminController#create_system (for 127.0.0.1 at 2010-02-23 13:18:49) [GET]
+Checking DNSBL 1.0.0.127.bl.spamcop.net
+Checking DNSBL 1.0.0.127.sbl-xbl.spamhaus.org
+127.0.0.1 added to DNSBL passed cache
+Rendering template within layouts/default
+Rendering admin/create_system
+Completed in 12672ms (View: 87, DB: 0) | 200 OK [http://0.0.0.0/create_system]
+
+
+Processing WikiController#index (for 127.0.0.1 at 2010-02-23 13:19:01) [GET]
+Redirected to http://0.0.0.0:2500/create_system
+Completed in 3ms (DB: 0) | 302 Found [http://0.0.0.0/]
+
+
+Processing AdminController#create_system (for 127.0.0.1 at 2010-02-23 13:19:01) [GET]
+Rendering template within layouts/default
+Rendering admin/create_system
+Completed in 136ms (View: 135, DB: 0) | 200 OK [http://0.0.0.0/create_system]
+
+
+Processing AdminController#create_system (for 127.0.0.1 at 2010-02-23 13:22:26) [GET]
+Checking DNSBL 1.0.0.127.bl.spamcop.net
+Checking DNSBL 1.0.0.127.sbl-xbl.spamhaus.org
+127.0.0.1 added to DNSBL passed cache
+Rendering template within layouts/default
+Rendering admin/create_system
+Completed in 4129ms (View: 87, DB: 0) | 200 OK [http://0.0.0.0/create_system]
+
+
+Processing WikiController#index (for 127.0.0.1 at 2010-02-23 13:22:32) [GET]
+Redirected to http://0.0.0.0:2500/create_system
+Completed in 5ms (DB: 0) | 302 Found [http://0.0.0.0/]
+
+
+Processing AdminController#create_system (for 127.0.0.1 at 2010-02-23 13:22:32) [GET]
+Rendering template within layouts/default
+Rendering admin/create_system
+Completed in 87ms (View: 74, DB: 0) | 200 OK [http://0.0.0.0/create_system]
+
+
+Processing WikiController#index (for 127.0.0.1 at 2010-02-23 14:59:07) [GET]
+Redirected to http://0.0.0.0:2500/create_system
+Completed in 27ms (DB: 0) | 302 Found [http://0.0.0.0/]
+
+
+Processing AdminController#create_system (for 127.0.0.1 at 2010-02-23 14:59:07) [GET]
+Checking DNSBL 1.0.0.127.bl.spamcop.net
+Checking DNSBL 1.0.0.127.sbl-xbl.spamhaus.org
+127.0.0.1 added to DNSBL passed cache
+Rendering template within layouts/default
+Rendering admin/create_system
+Completed in 4086ms (View: 76, DB: 1) | 200 OK [http://0.0.0.0/create_system]
+
+
+Processing AdminController#create_system (for 127.0.0.1 at 2010-02-23 14:59:36) [POST]
+  Parameters: {"web_name"=>"wikimeubel", "_form_key"=>"9ae47751348f7df4731940a3ffa634e5fcb43af9", "password_check"=>"eppikm", "web_address"=>"wikimeubel", "password"=>"eppikm"}
+Expired fragment: views/wikimeubel/recently_revised (0.3ms)
+Expired fragment: views/wikimeubel/list (0.3ms)
+Expired fragment: views/wikimeubel/authors (0.3ms)
+Expired fragment: views/wikimeubel/atom_with_content (0.3ms)
+Expired fragment: views/wikimeubel/atom_with_headlines (0.3ms)
+Expired fragment: views/wikimeubel/file_list (0.3ms)
+Expired fragment: views/wikimeubel/file_list/file_name (0.3ms)
+Expired fragment: views/wikimeubel/file_list/created_at (0.3ms)
+Expired fragment: views/wikimeubel/recently_revised (0.3ms)
+Expired fragment: views/wikimeubel/list (0.2ms)
+Expired fragment: views/wikimeubel/authors (0.2ms)
+Expired fragment: views/wikimeubel/atom_with_content (0.3ms)
+Expired fragment: views/wikimeubel/atom_with_headlines (0.2ms)
+Expired fragment: views/wikimeubel/file_list (0.2ms)
+Expired fragment: views/wikimeubel/file_list/file_name (0.2ms)
+Expired fragment: views/wikimeubel/file_list/created_at (0.2ms)
+Expired fragment: views/wikimeubel/recently_revised (0.2ms)
+Expired fragment: views/wikimeubel/list (0.2ms)
+Expired fragment: views/wikimeubel/authors (0.2ms)
+Expired fragment: views/wikimeubel/atom_with_content (0.2ms)
+Expired fragment: views/wikimeubel/atom_with_headlines (0.2ms)
+Expired fragment: views/wikimeubel/file_list (0.2ms)
+Expired fragment: views/wikimeubel/file_list/file_name (0.2ms)
+Expired fragment: views/wikimeubel/file_list/created_at (0.2ms)
+Redirected to http://0.0.0.0:2500/wikimeubel/new/HomePage
+Completed in 482ms (DB: 54) | 302 Found [http://0.0.0.0/create_system]
+
+
+Processing WikiController#new (for 127.0.0.1 at 2010-02-23 14:59:36) [GET]
+  Parameters: {"id"=>"HomePage", "web"=>"wikimeubel"}
+Reading page 'HomePage' from web 'wikimeubel'
+Page 'HomePage' not found
+Rendering template within layouts/default
+Rendering wiki/new
+Completed in 93ms (View: 83, DB: 3) | 200 OK [http://0.0.0.0/wikimeubel/new/HomePage]
+
+
+Processing WikiController#save (for 127.0.0.1 at 2010-02-23 14:59:43) [POST]
+  Parameters: {"author"=>"AnonymousCoward", "id"=>"HomePage", "_form_key"=>"946b5ce8292ba32622d4a95a516af4385e22f967", "content"=>"*WIki Meubel* \r\n\r\nWIki Meubel adalah sarana ensiklopedia yang membahas tentang deskripsi, spesifikasi, dan sejarah dunia meubel di Indonesia. Mulai dari material dan bahan pembuat meubel sampai jenis dan sejarah dari meubel tersebut. Wiki meubel memberikan kesempatan kepada siapa saja untuk berkontribusi dengan bebaas dan bertanggung jawab..\r\nmari lestarikan budaya meubel Indonesia, *MERDEKA !!!*\r\n\r\n\r\n\r\n_Wiki meubel dikelola oleh KIKM JAKARTA_", "web"=>"wikimeubel"}
+Reading page 'HomePage' from web 'wikimeubel'
+Page 'HomePage' not found
+127.0.0.1
+Expired fragment: views/wikimeubel/recently_revised (0.3ms)
+Expired fragment: views/wikimeubel/list (0.3ms)
+Expired fragment: views/wikimeubel/authors (0.3ms)
+Expired fragment: views/wikimeubel/atom_with_content (0.3ms)
+Expired fragment: views/wikimeubel/atom_with_headlines (0.3ms)
+Expired fragment: views/wikimeubel/file_list (0.3ms)
+Expired fragment: views/wikimeubel/file_list/file_name (0.3ms)
+Expired fragment: views/wikimeubel/file_list/created_at (0.3ms)
+Expired fragment: views/wikimeubel/show/HomePage (0.3ms)
+Expired fragment: views/wikimeubel/published/HomePage (0.3ms)
+Expired fragment: views/wikimeubel/s5/HomePage (0.3ms)
+Expired fragment: views/wikimeubel/tex/HomePage (0.3ms)
+Expired fragment: views/wikimeubel/print/HomePage (0.3ms)
+Expired fragment: views/wikimeubel/history/HomePage (0.3ms)
+Expired fragment: views/wikimeubel/show/diff/HomePage (0.3ms)
+Redirected to http://0.0.0.0:2500/wikimeubel/show/HomePage
+Completed in 901ms (DB: 5) | 302 Found [http://0.0.0.0/wikimeubel/save/HomePage]
+
+
+Processing WikiController#show (for 127.0.0.1 at 2010-02-23 14:59:44) [GET]
+  Parameters: {"id"=>"HomePage", "web"=>"wikimeubel"}
+Reading page 'HomePage' from web 'wikimeubel'
+Page 'HomePage'  found
+Cached fragment hit: views/wikimeubel/show/HomePage (0.3ms)
+Rendering template within layouts/default
+Rendering wiki/page
+Rendered wiki/_inbound_links (2.9ms)
+Cached fragment miss: views/wikimeubel/show/HomePage (1.8ms)
+Completed in 108ms (View: 94, DB: 6) | 200 OK [http://0.0.0.0/wikimeubel/show/HomePage]
+
+
+Processing WikiController#list (for 127.0.0.1 at 2010-02-23 14:59:47) [GET]
+  Parameters: {"web"=>"wikimeubel"}
+Cached fragment hit: views/wikimeubel/list (0.4ms)
+Rendering template within layouts/default
+Rendering wiki/list
+Cached fragment miss: views/wikimeubel/list (0.8ms)
+Completed in 78ms (View: 57, DB: 3) | 200 OK [http://0.0.0.0/wikimeubel/list]
+
+
+Processing WikiController#recently_revised (for 127.0.0.1 at 2010-02-23 14:59:50) [GET]
+  Parameters: {"web"=>"wikimeubel"}
+Cached fragment hit: views/wikimeubel/recently_revised (0.2ms)
+Rendering template within layouts/default
+Rendering wiki/recently_revised
+Cached fragment miss: views/wikimeubel/recently_revised (0.8ms)
+Completed in 111ms (View: 102, DB: 3) | 200 OK [http://0.0.0.0/wikimeubel/recently_revised]
+
+
+Processing WikiController#show (for 127.0.0.1 at 2010-02-23 14:59:52) [GET]
+  Parameters: {"id"=>"HomePage", "web"=>"wikimeubel"}
+Reading page 'HomePage' from web 'wikimeubel'
+Page 'HomePage'  found
+Cached fragment hit: views/wikimeubel/show/HomePage (0.2ms)
+Filter chain halted as [#<ActionController::Caching::Actions::ActionCacheFilter:0xb6fb8bbc @options={:layout=>nil, :cache_path=>nil, :store_options=>{}}>] rendered_or_redirected.
+Filter chain halted as [#<ActionController::Filters::AroundFilter:0xb6fb898c @method=#<ActionController::Caching::Actions::ActionCacheFilter:0xb6fb8bbc @options={:layout=>nil, :cache_path=>nil, :store_options=>{}}>, @kind=:filter, @options={:unless=>nil, :if=>#<Proc:0xb7549130@/home/firman/work/instiki.0.17/app/controllers/wiki_controller.rb:12>, :only=>#<Set: {"file_list", "list", "history", "s5", "recently_revised", "published", "print", "atom_with_content", "revision", "tex", "show", "authors", "atom_with_headlines"}>}, @identifier=nil>] did_not_yield.
+Completed in 8ms (View: 0, DB: 2) | 200 OK [http://0.0.0.0/wikimeubel/show/HomePage]
