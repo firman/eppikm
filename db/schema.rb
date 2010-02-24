@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223134948) do
+ActiveRecord::Schema.define(:version => 20100224092306) do
 
   create_table "beritas", :force => true do |t|
     t.string   "title"
@@ -18,17 +18,10 @@ ActiveRecord::Schema.define(:version => 20100223134948) do
     t.datetime "updated_at"
   end
 
-  create_table "forum_posts", :force => true do |t|
-    t.string   "name",       :limit => 50,                :null => false
-    t.string   "subject",                                 :null => false
-    t.text     "body"
-    t.integer  "root_id",                  :default => 0, :null => false
-    t.integer  "parent_id",                :default => 0, :null => false
-    t.integer  "lft",                      :default => 0, :null => false
-    t.integer  "rgt",                      :default => 0, :null => false
-    t.integer  "depth",                    :default => 0, :null => false
-    t.datetime "created_at",                              :null => false
-    t.datetime "updated_at",                              :null => false
+  create_table "forums", :force => true do |t|
+    t.string   "name",          :limit => 64
+    t.string   "administrator", :limit => 20
+    t.datetime "created_on"
   end
 
   create_table "line_items", :force => true do |t|
@@ -38,6 +31,15 @@ ActiveRecord::Schema.define(:version => 20100223134948) do
     t.decimal  "total_price", :precision => 8, :scale => 2, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.string   "title",      :limit => 64
+    t.string   "author",     :limit => 20
+    t.datetime "created_on"
+    t.string   "email",      :limit => 40
+    t.text     "message"
+    t.integer  "forum_id"
   end
 
   create_table "orders", :force => true do |t|

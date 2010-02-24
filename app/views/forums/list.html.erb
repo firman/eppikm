@@ -1,0 +1,23 @@
+<h1>Forum</h1>
+<h2>Forum yang sudah ada</h2>
+<ul>
+   <% for forum in @forums %>
+   <!-- create a list item for every forum -->
+      <li>
+         <!-- link to list action in messages -->
+         <%= link_to ( forum.name, {:controller => 'messages',
+            :action => 'list', :forum_id => forum.id},
+            { :class => (forum.created_on < 5.minutes.ago ?
+            'recent': nil ) } ) %>
+      </li>
+   <% end %> <!-- end for -->
+</ul>
+<% if ( session[ :user ] ) then %>
+   <!-- a user is logged in -->
+   <h2>Manajemen Forum</h2>
+   <ul>
+      <li><%= link_to 'Add a Forum', :action => 'new' %></li>
+      <li><%= link_to 'Delete a Forum', :action => 'delete' %></li>
+   </ul>
+<% end %> <!-- end if -->
+
