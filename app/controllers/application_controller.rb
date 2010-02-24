@@ -2,6 +2,9 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  layout "store"
+
+  before_filter :authorize, :except => :login
   session :session_key => '_depot_session_id'
 
   # See ActionController::RequestForgeryProtection for details
@@ -14,21 +17,12 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
 
-  def create
-    @user = User.new(params[:user])
-     if @user.save
-       redirect_to @user
-     else
-       @title = "Sign up"
-       render 'new'
-     end
-  end
-
 
   protected
+
   def authorize
     unless Seller.find_by_id(session[:seller_id])
-      flash[:notice] = "Please log in"
+      flash[:notice] = "Silahkan log in"
       redirect_to :controller => :admin, :action => :login
     end
   end

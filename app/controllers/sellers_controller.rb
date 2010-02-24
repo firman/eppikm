@@ -75,7 +75,12 @@ class SellersController < ApplicationController
   # DELETE /sellers/1.xml
   def destroy
     @seller = Seller.find(params[:id])
-    @seller.destroy
+    begin
+      @seller.destroy
+        flash[:notice] = "User #{seller.name} berhasil dihapus"
+    rescue Exeption => e
+      flash[:notice] = e.message
+    end
 
     respond_to do |format|
       format.html { redirect_to(sellers_url) }

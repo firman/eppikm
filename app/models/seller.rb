@@ -55,12 +55,17 @@ class Seller < ActiveRecord::Base
     self.hashed_password = Seller.encrypted_password(self.password, self.salt)
   end
 
+  def after_destroy
+    if Seller.count.zero?
+      raise "TIdak bisa delete seller terakhir"
+    end
+  end
 
 
 private
 
   def password_non_blank
-    errors.add(:password, "Missing password") if hashed_password.blank?
+    errors.add(:password, "password salah") if hashed_password.blank?
   end
 
 
