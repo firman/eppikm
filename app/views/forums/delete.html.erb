@@ -1,8 +1,0 @@
-<h1>Delete a Forum</h1><br />
-<% form_tag :action => :destroy do %> <!-- create from tag -->
-   <p><label for="forum_id">Forum Name</label><br />
-   <%= collection_select "forum", "id", @forums, "id", "name" %></p>
-   <%= submit_tag "Delete" %> <!-- create submit tag -->
-<% end %> <!-- create end form tag -->
-<%= link_to 'Back', :action => 'list' %> <!-- link back to list method -->
-
