@@ -1,0 +1,25 @@
+<div style = "text-align: center">
+   <table style = "width: 600px; margin: 0 auto 0 auto">
+       <tr class="msgHeader">
+          <td><%= @forum.name %></td>
+       </tr>
+       <% for message in @messages %>
+          <!-- create two table rows for every message -->
+          <tr class="msgTitle">
+             <td>
+             <strong><%= message[ 'title' ] %></strong><br />
+             by <em><%= message[ 'author' ] %></em> at
+             <%= message[ 'created_on' ].strftime("%m/%d/%Y at %I:%M%p") %>
+             </td>
+          </tr>
+          <tr class="msgPost">
+             <!-- message content -->
+             <td><%= message[ 'message' ] %></td>
+          </tr>
+       <% end %>
+   </table>
+   <%= link_to 'New message', :action => 'new' %> |
+   <%= link_to 'list forums',
+       :controller => 'forums', :action => 'index' %>
+</div>
+
