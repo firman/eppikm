@@ -17,11 +17,18 @@ require 'digest/sha1'
 
 class Seller < ActiveRecord::Base
   validates_presence_of     :name, :email, :alamat
-  validates_uniqueness_of   :name
+  validates_uniqueness_of   :name, :case_sensitive => false
+  validates_uniqueness_of   :email
+  validates_length_of :name, :in => 2..25
+  validates_format_of :name, :with => /\A[a-zA-Z]+\z/,
+    :message => "hanya boleh huruf"
+ validates_length_of :password, :minimum => 6,
+    :message => "password minimal 6 karakter", :on => :create
 
   attr_accessor :password_confirmation
   validates_confirmation_of :password
   validate :password_non_blank
+
 
    def self.authenticate(name, password)
     seller = self.find_by_name(name)

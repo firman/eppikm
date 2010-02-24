@@ -26,10 +26,13 @@ class Product < ActiveRecord::Base
   validates_format_of :image_url,
                       :with => %r{\.(gif|jpg|png)$}i,
                       :message => 'format gambar harus dalam GIF/JPG/PNG.(gif|jpg\png)'
+
+
   has_many :tags
 
   accepts_nested_attributes_for :tags, :allow_destroy => :true  ,
     :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? } }
+
 
   protected
     def price_must_be_at_least_a_cent

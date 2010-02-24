@@ -32,7 +32,7 @@
   <% unless tag_form.object.nil? || tag_form.object.new_record? %>
     <p>
       <%= tag_form.label :_delete, 'remove' %>
-      <%= tag_form.checkbox :_delete %>
+      <%= tag_form.check_box :_delete %>
     </p>
   <% end %>
   <% end %>

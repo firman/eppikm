@@ -123,11 +123,15 @@ td.sidebar {
 #product-list .list-title {
          color: #244 ;
          font-weight: bold;
-         font-size:     larger;
+         font-size: larger;
 }
 #product-list .list-image {
   width:         60px;
   height:        70px;
+}
+#product-list .list-seller {
+    color: #244 ;
+    font-weight: bold;
 }
 #product-list .list-actions {
   font-size:     x-small;

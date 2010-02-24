@@ -261,3 +261,93 @@ Rendering wiki/page
   [4;35;1mSQL (0.5ms)[0m   [0mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'HomePage' AND wiki_references.link_type = 'I' AND pages.web_id = '1'[0m
 Rendered wiki/_inbound_links (42.1ms)
 Completed in 5573ms (View: 2394, DB: 556) | 200 OK [http://localhost/wiki/wikimeubel/show/HomePage]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WikiController#show (for 127.0.0.1 at 2010-02-24 09:39:19) [GET]
+  Parameters: {"id"=>"HomePage", "web"=>"wikimeubel"}
+  [4;36;1mWeb Load (13.5ms)[0m   [0;1mSELECT * FROM `webs` [0m
+  [4;35;1mWeb Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `webs`[0m
+Reading page 'HomePage' from web 'wikimeubel'
+  [4;36;1mWeb Load (1.4ms)[0m   [0;1mSELECT * FROM `webs` WHERE (`webs`.`address` = 'wikimeubel') LIMIT 1[0m
+  [4;35;1mPage Load (2.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.web_id = 1 AND (name = 'HomePage')) LIMIT 1[0m
+Page 'HomePage'  found
+  [4;36;1mPage Columns (6.5ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mRevision Load (0.5ms)[0m   [0mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id DESC LIMIT 1[0m
+Rendering template within layouts/default
+Rendering wiki/page
+  [4;36;1mWeb Load (0.4ms)[0m   [0;1mSELECT * FROM `webs` WHERE (`webs`.`id` = 1) [0m
+  [4;35;1mRevision Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `revisions`[0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `webs` WHERE (`webs`.`id` = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `revisions` WHERE (`revisions`.page_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mSQL (5.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `pages` WHERE (web_id = 1 AND name = 'home page') [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'home page' AND wiki_references.link_type = 'R' AND pages.web_id = '1'[0m
+  [4;36;1mRevision Load (0.3ms)[0m   [0;1mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id[0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.web_id = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'HomePage' AND wiki_references.link_type in ('L','W') AND pages.web_id = '1'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'HomePage' AND wiki_references.link_type = 'I' AND pages.web_id = '1'[0m
+Rendered wiki/_inbound_links (11.0ms)
+Completed in 1627ms (View: 1324, DB: 37) | 200 OK [http://localhost/wiki/wikimeubel/show/HomePage]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WikiController#show (for 127.0.0.1 at 2010-02-24 14:54:42) [GET]
+  Parameters: {"id"=>"HomePage", "web"=>"wikimeubel"}
+  [4;36;1mWeb Load (0.2ms)[0m   [0;1mSELECT * FROM `webs` [0m
+  [4;35;1mWeb Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `webs`[0m
+Reading page 'HomePage' from web 'wikimeubel'
+  [4;36;1mWeb Load (0.2ms)[0m   [0;1mSELECT * FROM `webs` WHERE (`webs`.`address` = 'wikimeubel') LIMIT 1[0m
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.web_id = 1 AND (name = 'HomePage')) LIMIT 1[0m
+Page 'HomePage'  found
+  [4;36;1mPage Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mRevision Load (0.1ms)[0m   [0mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id DESC LIMIT 1[0m
+Rendering template within layouts/default
+Rendering wiki/page
+  [4;36;1mWeb Load (0.2ms)[0m   [0;1mSELECT * FROM `webs` WHERE (`webs`.`id` = 1) [0m
+  [4;35;1mRevision Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `revisions`[0m
+  [4;36;1mPage Load (0.1ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `webs` WHERE (`webs`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `revisions` WHERE (`revisions`.page_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `pages` WHERE (web_id = 1 AND name = 'home page') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'home page' AND wiki_references.link_type = 'R' AND pages.web_id = '1'[0m
+  [4;36;1mRevision Load (0.1ms)[0m   [0;1mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id[0m
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.web_id = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'HomePage' AND wiki_references.link_type in ('L','W') AND pages.web_id = '1'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'HomePage' AND wiki_references.link_type = 'I' AND pages.web_id = '1'[0m
+Rendered wiki/_inbound_links (21.4ms)
+Completed in 1356ms (View: 1162, DB: 6) | 200 OK [http://localhost/wiki/wikimeubel/show/HomePage]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WikiController#show (for 127.0.0.1 at 2010-02-24 14:54:48) [GET]
+  Parameters: {"id"=>"HomePage", "web"=>"wikimeubel"}
+  [4;36;1mWeb Load (0.2ms)[0m   [0;1mSELECT * FROM `webs` [0m
+  [4;35;1mWeb Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `webs`[0m
+Reading page 'HomePage' from web 'wikimeubel'
+  [4;36;1mWeb Load (0.1ms)[0m   [0;1mSELECT * FROM `webs` WHERE (`webs`.`address` = 'wikimeubel') LIMIT 1[0m
+  [4;35;1mPage Load (1.9ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.web_id = 1 AND (name = 'HomePage')) LIMIT 1[0m
+Page 'HomePage'  found
+  [4;36;1mPage Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mRevision Load (0.1ms)[0m   [0mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id DESC LIMIT 1[0m
+Rendering template within layouts/default
+Rendering wiki/page
+  [4;36;1mWeb Load (0.1ms)[0m   [0;1mSELECT * FROM `webs` WHERE (`webs`.`id` = 1) [0m
+  [4;35;1mRevision Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `revisions`[0m
+  [4;36;1mPage Load (0.1ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `webs` WHERE (`webs`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `revisions` WHERE (`revisions`.page_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `pages` WHERE (web_id = 1 AND name = 'home page') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'home page' AND wiki_references.link_type = 'R' AND pages.web_id = '1'[0m
+  [4;36;1mRevision Load (0.1ms)[0m   [0;1mSELECT * FROM `revisions` WHERE (`revisions`.page_id = 1) ORDER BY id[0m
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.web_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'HomePage' AND wiki_references.link_type in ('L','W') AND pages.web_id = '1'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT name FROM pages JOIN wiki_references ON pages.id = wiki_references.page_id WHERE wiki_references.referenced_name = 'HomePage' AND wiki_references.link_type = 'I' AND pages.web_id = '1'[0m
+Rendered wiki/_inbound_links (5.7ms)
+Completed in 189ms (View: 140, DB: 9) | 200 OK [http://localhost/wiki/wikimeubel/show/HomePage]
