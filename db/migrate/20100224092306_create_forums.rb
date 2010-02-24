@@ -5,10 +5,7 @@ class CreateForums < ActiveRecord::Migration
       t.column :administrator, :string, :limit => 20
       t.column :created_on, :timestamp
     end # do block
-    Forum.create :name => "Pemesanan barang",
-      :administrator => "user2"
-    Forum.create :name => "Pengiriman barang",
-      :administrator => "user2"
+
 end # method self.up
 
 

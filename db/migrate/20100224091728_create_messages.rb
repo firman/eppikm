@@ -6,7 +6,7 @@ class CreateMessages < ActiveRecord::Migration
       t.column :created_on, :timestamp
       t.column :email, :string, :limit => 40
       t.column :message, :text
-      t.column :forum_id, :integer
+
     end
 
     Message.create :title => "Assalamu'alaikum'",
