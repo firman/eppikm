@@ -3,17 +3,17 @@ class MessagesController < ApplicationController
       :redirect_to => { :action => :list }
    # sets up the list web page that lists all messages
    def list
-      if ( params[ :forum_id ] ) # if parameter forum_id is provided
-         session[ :forum_id ] = params[ :forum_id ]
+      if ( params[ :seller_id ] ) # if parameter forum_id is provided
+         session[ :seller_id ] = params[ :seller_id ]
       end # if
-      if ( session[ :forum_id ] == nil ) # if no forum_id is provided
+      if ( session[ :seller_id ] == nil ) # if no forum_id is provided
          flash[ :notice ] = 'there has been an error.'
          redirect_to :controller => "forums", :action => "list" and return
       end # if
       @messages = Message.find( :all, :order => "created_on desc",
-         :conditions => "forum_id = #{ session[:forum_id ] }" )
+         :conditions => "seller_id = #{ session[:seller_id ] }" )
       @forum = Forum.find( :first,
-         :conditions => "id = #{ session[ :forum_id ] }" )
+         :conditions => "id = #{ session[ :seller_id ] }" )
    end # method list
    # sets up the new web page that creates a message
    def new
@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
    # attempts to create a new message with the parameters passed in
    def create
       @message = Message.new( params[ :message ] )
-      @message.forum_id = session[ :forum_id ]
+      @message.seller_id = session[ :seller_id ]
       if @message.save # if save method was successful
          flash[ :notice ] = 'Message was successfully created.'
          redirect_to :action => 'list'

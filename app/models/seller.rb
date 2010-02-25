@@ -19,6 +19,8 @@ class Seller < ActiveRecord::Base
   validates_presence_of     :name, :email, :alamat
   validates_uniqueness_of   :name, :case_sensitive => false
   validates_uniqueness_of   :email
+  validates_format_of :email,
+     :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   validates_length_of :name, :in => 2..25
   validates_format_of :name, :with => /\A[a-zA-Z]+\z/,
     :message => "hanya boleh huruf"

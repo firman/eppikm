@@ -1,17 +1,3 @@
-# == Schema Information
-# Schema version: 20100224092306
-#
-# Table name: messages
-#
-#  id         :integer(4)      not null, primary key
-#  title      :string(64)
-#  author     :string(20)
-#  created_on :datetime
-#  email      :string(40)
-#  message    :text
-#  forum_id   :integer(4)
-#
-
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 # one:

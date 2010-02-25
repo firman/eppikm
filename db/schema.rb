@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100224092306) do
+ActiveRecord::Schema.define(:version => 20100225035944) do
 
   create_table "beritas", :force => true do |t|
     t.string   "title"
@@ -37,9 +37,8 @@ ActiveRecord::Schema.define(:version => 20100224092306) do
     t.string   "title",      :limit => 64
     t.string   "author",     :limit => 20
     t.datetime "created_on"
-    t.string   "email",      :limit => 40
     t.text     "message"
-    t.integer  "forum_id"
+    t.integer  "seller_id"
   end
 
   create_table "orders", :force => true do |t|

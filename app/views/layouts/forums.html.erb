@@ -9,19 +9,6 @@
 
       <div id="content" class="round">
 
-       <% if ( session[ :user ] ) then %> <!-- if user is logged on -->
-          <!-- code to display if user is logged on -->
-          <%= "Logged In As #{ session[ :user ].name }: " %>
-          <%= link_to 'log out',
-             :controller => 'users', :action => 'logout' %>
-       <% else %> <!-- user is not logged on -->
-          <!-- code to display if user is not logged on -->
-          <%= "Anda belum login" %>
-          <%= link_to 'log in',
-             :controller => 'users', :action => 'admin' %>
-       <% end %> <!-- end if -->
-
-
           <%= yield %>
         </div>
 
