@@ -2,10 +2,10 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  layout "store"
+
 
   before_filter :authorize, :except => :login
-  session :session_key => '_depot_session_id'
+  session :session_key => '_eppikm_session_id'
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store

@@ -1,5 +1,6 @@
 class StoreController < ApplicationController
 
+
   before_filter :find_cart, :except => :empty_cart
 
   def index

@@ -77,7 +77,7 @@ class SellersController < ApplicationController
     @seller = Seller.find(params[:id])
     begin
       @seller.destroy
-        flash[:notice] = "User #{seller.name} berhasil dihapus"
+        flash[:notice] = "Seller #{seller.name} berhasil dihapus"
     rescue Exeption => e
       flash[:notice] = e.message
     end

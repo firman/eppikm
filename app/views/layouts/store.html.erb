@@ -4,12 +4,14 @@
   <head>
     <title><%= title %></title>
     <%= render 'layouts/stylesheets' %>
+    <%= javascript_include_tag :defaults %>
 
   </head>
 
   <body id="store">
     <div class="container">
       <%= render 'layouts/header' %>
+
         <div id="content" class="round">
 
           <div id="columns">
