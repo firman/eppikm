@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100224092306
+# Schema version: 20100225035944
 #
 # Table name: beritas
 #

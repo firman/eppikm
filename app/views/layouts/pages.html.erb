@@ -7,6 +7,9 @@
     <%= render 'layouts/stylesheets' %>
     <%= javascript_include_tag :defaults %>
 
+     <%= GMap.header (:h1=>'it')%>
+    <%= @map.to_html %>
+
   </head>
 
   <body>

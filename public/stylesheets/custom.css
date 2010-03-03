@@ -11,15 +11,34 @@ body {
 #header {
   padding-top: 10px;
 }
-#header img {
-  padding: 1em;
-  background: #fff;
-}
+
 #content {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
   background: #fff;
+}
+
+#content #main_kiri {
+	float: left;
+	width: 550px;
+	padding: 20px 0;
+}
+
+#content #side_kanan {
+	float: right;
+	width: 250px;
+	margin-right: 10px;
+	padding: 20px 15px;
+	padding-top: 1em;
+     padding-right: 1em;
+     padding-bottom: 1em;
+}
+
+.side_column_section {
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed #333;
 }
 
 /* Links */
@@ -33,35 +52,6 @@ a:hover {
 }
 a:visited {
   color: #069;
-}
-
-/* Navigation */
-.navigation {
-  float: left;
-}
-
-.navigation {
-  background-color: tranparant;
-  padding: 0 0.7em;
-  white-space: nowrap;
-}
-ul.navigation {
-  margin: 0;
-}
-.navigation li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 0.2em 0;
-}
-.navigation li a {
-  padding: 0 5px;
-  font-weight: bold;
-}
-.navigation li a:visited {
-  color: #09c;
-}
-.navigation li a:hover {
-  text-decoration: underline;
 }
 
 /* Sign up button */
@@ -177,9 +167,7 @@ td.sidebar {
 
 /* Styles for main page */
 
-#columns {
-  background: #141;
-}
+
 #main {
   margin-left: 12em;
   padding-top: 4ex;
@@ -198,6 +186,7 @@ td.sidebar {
   color: #bfb ;
   font-size: small;
 }
+
 h1 {
   font: 150% sans-serif;
   color: #226 ;

@@ -1,9 +1,57 @@
-    <h1>E-Marketing PPIKM (Pusat Promosi Industri Kayu dan Meubel)</h1>
+<div id="content">
+  <div id="main_kiri">
+
+    <h1>E-Marketing PPIKM</h1>
+    <h2>(Pusat Promosi Industri Kayu dan Meubel)</h2>
     <p>
         Silahkan cari meubel dan firniture yang anda inginkan
         <a href="">Katalog Produk</a>
     </p>
-     <p> <%= @map.div(:width => 400, :height => 300) %></p>
 
-    <%= link_to "Sign up now!", signup_url, :class => "signup_button round" %>
+    <% for product in @products -%>
+    <div id="store">
+    <div class="entry">
+
+        <%= image_tag(product.image_url) %>
+        <h3><%=h product.title %></h3>
+        <%= product.description %>
+        <div class="price-line">
+
+        <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
+                                                              :separator => ",",
+                                                              :delimiter => ".")%>
+        </span>
+
+    </div>
+    </div>
+    </div>
+      <% end %>
+
+
+
+  </div>
+
+    <div id="side_kanan">
+			<div class="side_column_section">
+
+				 <%= @map.div(:width => 300, :height => 250) %>
+      </div>
+
+
+            <div class="side_column_section">
+
+                <h3>Recent Posts</h3>
+                <div class="recent_post">
+                    <h4><a href="#">Kursi Betawi Pilihan</a></h4>
+                    Kursi betawi asli dari kayu jati
+                </div>
+
+                <div class="recent_post">
+                    <h4><a href="#">Meubel ekspor</a></h4>
+                    Meubel di PPIKM kualitas ekspor
+                </div>
+
+            </div>
+
+</div>
 
