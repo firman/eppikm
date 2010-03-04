@@ -20,13 +20,6 @@ ppikm = GMarker.new([-6.203451, 106.903244],
 
   end
 
-  def about
-    @title = "About PPIKM"
-  end
-
-  def help
-    @title = "Help"
-  end
 
 end
 

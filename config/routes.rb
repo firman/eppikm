@@ -9,8 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
 
-  map.about '/about', :controller => 'pages', :action => 'about'
-  map.help '/help', :controller => 'pages', :action => 'help'
+  map.about '/about', :controller => 'about', :action => 'about'
+  map.help '/help', :controller => 'about', :action => 'help'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.store '/store', :controller => 'store', :action => 'index'
 
