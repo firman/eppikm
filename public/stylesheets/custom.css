@@ -1,12 +1,14 @@
 .container {
   width: 975px;
   margin: 0 auto;
+  color: #000000;
 }
 body {
     clear: both;
 	width: 100%;
 	margin: 0 auto;
-	background: url(../images/bg_wrapper.jpg) center top no-repeat;
+	background: url(../images/bg_wrapper.jpg) center top repeat-y;
+
 }
 #header {
   padding-top: 10px;
@@ -123,10 +125,7 @@ td.sidebar {
   width:         60px;
   height:        70px;
 }
-#product-list .list-seller {
-    color: #244 ;
-    font-weight: bold;
-}
+
 #product-list .list-actions {
   font-size:     x-small;
   text-align:    right;
@@ -203,8 +202,9 @@ h1 {
   font-family: sans-serif;
 }
 #store .entry img {
-  width: 75px;
+  width: 80px;
   float: left;
+ padding-right: 1em;
 }
 #store .entry h3 {
  margin-bottom: 2px;
@@ -376,7 +376,7 @@ div.field, div.actions {
 	text-align: center;
 	font-weight: bold;
 	text-decoration: none;
-	color: #f9efd0;
+	color: #fff;
 	background: url(../images/menu_divider.jpg) right repeat-y;
 	outline: none;
 }
@@ -384,65 +384,9 @@ div.field, div.actions {
 #bg_menu li a:hover, #bg_menu li .current {
 	color: #F3FF00;
 }
+
+
 #bg_menu li .last {
 	background: none;
-}
-
-/**
- * Slideshow style rules.
- */
-#slideshow {
-	margin:0 auto;
-	width: 900px;
-	height: 200px;
-	position:relative;
-}
-#slideshow #slidesContainer {
-  margin:0 auto;
-  width: 750px;
-  height: 200px;
-  overflow:auto; /* allow scrollbar */
-  position:relative;
-}
-#slideshow #slidesContainer .slide {
-  width: 680px; /* reduce by 20 pixels of #slidesContainer to avoid horizontal scroll */
-  height: 200px;
-  margin:0 auto;
-}
-
-.slide img {
-	float:left;
-	margin-right: 40px;
-	border:1px solid #4f4b42;
-}
-
-#slideshow #slidesContainer .slide a:hover {
-	text-decoration: none;
-}
-
-#slideshow #slidesContainer .slide a p {
-	color: #ffffff;
-}
-
-/**
- * Slideshow controls style rules.
- */
-.control {
-  display:block;
-  width: 30px;
-  height: 50px;
-  text-indent:-10000px;
-  position:absolute;
-  cursor: pointer;
-}
-#leftControl {
-  top: 85px;
-  left:0;
-  background:transparent url(images/slider_left_control.png) no-repeat 0 0;
-}
-#rightControl {
-  top: 85px;
-  right:0;
-  background: transparent url(images/slider_right_control.png) no-repeat 0 0;
 }
 

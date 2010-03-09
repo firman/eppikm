@@ -2,31 +2,32 @@
 <div id="content">
   <div id="main_kiri">
 
-    <h1>E-Marketing PPIKM</h1>
-    <h2>(Pusat Promosi Industri Kayu dan Meubel)</h2>
+    <h2>E-Marketing PPIKM</h2>
+    <h1>(Pusat Promosi Industri Kayu dan Meubel)</h1>
     <p>
         Silahkan cari meubel dan firniture yang anda inginkan
        <%= link_to "Katalog Produk", store_url %>
     </p>
 
-    <% for product in @products -%>
-    <div id="store">
-    <div class="entry">
 
-        <%= image_tag(product.image_url) %>
-        <h3><%=h product.title %></h3>
-        <%= product.description %>
-        <div class="price-line">
+        <% for product in @products -%>
+        <div id="store">
+        <div class="entry">
 
-        <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
-                                                              :separator => ",",
-                                                              :delimiter => ".")%>
-        </span>
+            <%= image_tag(product.image_url) %>
+            <h3><%=h product.title %></h3>
+            <%= product.description %>
+            <div class="price-line">
 
-    </div>
-    </div>
-    </div>
-      <% end %>
+            <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
+                                                                  :separator => ",",
+                                                                  :delimiter => ".")%>
+            </span>
+
+            </div>
+        </div>
+        </div>
+          <% end %>
 
 
 
