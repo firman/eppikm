@@ -8,8 +8,13 @@
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />
+      <strong>Email</strong>  <%= @user.email %><br />
+      <strong>Kota</strong>  <%= @user.alamat %><br />
       <strong>URL</strong> <%= link_to user_path(@user), user_path(@user) %>
     </td>
   </tr>
 </table>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
 

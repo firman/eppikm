@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users
+
   map.resources :forums
 
   map.resources :beritas
@@ -6,8 +8,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sellers
 
   map.resources :products
-
-  map.resources :users
 
   map.about '/about', :controller => 'about', :action => 'about'
   map.help '/help', :controller => 'about', :action => 'help'

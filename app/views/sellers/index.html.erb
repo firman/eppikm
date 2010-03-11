@@ -5,12 +5,16 @@
   <% for seller in @sellers %>
     <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
 
-    <td width="60%">
-         <span class="seller-title"><%=h seller.name %></span><br />
-         <span class="seller-title"><%=h seller.email %></span><br />
+     <td>
+         <span class ="list-title"><%=h seller.name %></span>
+     </td>
+
+    <td width="10%">
+         <td><span class="list-seller"><%=h seller.email %></span></td>
+          <td><span class="list-seller"><%=h seller.alamat %></span></td>
     </td>
 
-    <td class="seller-actions">
+    <td class="list-actions">
 
     <%= link_to 'Show', seller %><br/>
     <%= link_to 'Edit', edit_seller_path(seller) %><br/>

@@ -140,30 +140,6 @@ td.sidebar {
   background: #f8b0f8 ;
 }
 
-/* bwt daftar seller */
-#seller-list .seller-title {
-         color: #244 ;
-         font-weight: bold;
-         font-size:     larger;
-}
-#seller-list .seller-image {
-  width:         60px;
-  height:        70px;
-}
-#seller-list .seller-actions {
-  font-size:     x-small;
-  text-align:    right;
-  padding-left: 1em;
-}
-#seller-list .seller-line-even {
-
-  background: #e0f8f8 ;
-}
-#seller-list .seller-line-odd {
-
-  background: #f8b0f8 ;
-}
-
 /* Styles for main page */
 
 

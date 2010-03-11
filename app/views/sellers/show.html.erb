@@ -1,28 +1,21 @@
-<p>
-  <b>Name:</b>
-  <%=h @seller.name %>
-</p>
+<table class="profile">
+  <tr>
+    <td class="main">
+      <h2>
+         <%= gravatar_for @seller %>
+         <%= h @seller.name %>
+      </h2>
 
-<p>
-  <b>Email:</b>
-  <%=h @seller.email %>
-</p>
-
-<p>
-  <b>Alamat:</b>
-  <%=h @seller.alamat %>
-</p>
-
-<p>
-  <b>Hashed password:</b>
-  <%=h @seller.hashed_password %>
-</p>
-
-<p>
-  <b>Salt:</b>
-  <%=h @seller.salt %>
-</p>
-
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong>  <%= @seller.name %><br />
+      <strong>Email</strong>  <%= @seller.email %><br />
+      <strong>Kota</strong>  <%= @seller.alamat %><br />
+      <strong>URL</strong>  <%= link_to seller_path(@seller), seller_path(@seller) %>
+    </td>
+  </tr>
+</table>
 
 <%= link_to 'Edit', edit_seller_path(@seller) %> |
 <%= link_to 'Back', sellers_path %>
+

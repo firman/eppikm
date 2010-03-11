@@ -1,0 +1,45 @@
+<% @product.tags.build if @product.tags.empty? %>
+<% form_for(@product) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </p>
+  <p>
+    <%= f.label :seller %><br />
+    <%= f.text_field :seller %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+
+  <h2>Tags</h2>
+  <% f.fields_for :tags do |tag_form| %>
+    <p>
+      <%= tag_form.label :name, 'tag:' %>
+      <%= tag_form.text_field :name %>
+    </p>
+  <% unless tag_form.object.nil? || tag_form.object.new_record? %>
+    <p>
+      <%= tag_form.label :_delete, 'remove' %>
+      <%= tag_form.check_box :_delete %>
+    </p>
+  <% end %>
+  <% end %>
+
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+
+<% end %>
+
