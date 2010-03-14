@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
 
   helper :all # include all helpers, all the time
-  protect_from_forgery :secret => '7tWDI95y4WTOn4oGQJKSrxkUpJmldD60wexlJu1XvYo'
+  protect_from_forgery #:secret # => '7tWDI95y4WTOn4oGQJKSrxkUpJmldD60wexlJu1XvYo'
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password

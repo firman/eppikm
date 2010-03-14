@@ -10,16 +10,20 @@ class StoreController < ApplicationController
   end
 
   def add_to_cart
-  begin
-    product = Product.find(params[:id])
-    @cart = find_cart
-    @cart.add_product(product)
-    redirect_to_index
-  rescue ActiveRecord::RecordNotFound
-    logger.error("Attempt to access invalid product #{params[:id]}")
-    redirect_to_index("Salah produk")
+      begin
+      product = Product.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      logger.error("Attempt to access invalid product #{params[:id]}" )
+      redirect_to_index("Invalid product" )
+    else
+      @current_item = @cart.add_product(product)
+      if request.xhr?
+         respond_to { |format| format.js }
+      else
+         redirect_to_index
+      end
+    end
   end
-end
 
   def checkout
     @cart = find_cart

@@ -7,6 +7,10 @@ class AboutController < ApplicationController
     @title = "Help"
   end
 
+protected
+
+  def authorize
+  end
 
 end
 

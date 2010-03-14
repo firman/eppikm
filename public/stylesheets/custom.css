@@ -21,17 +21,23 @@ body {
   background: #fff;
 }
 
-#content #main_kiri {
+#content #main_slide {
 	float: left;
-	width: 550px;
-	padding: 20px 0;
+	width: 500px;
+	padding: 15px 0;
+}
+
+#content #main_berita {
+	float: left;
+	width: 500px;
+	padding: 15px 0;
 }
 
 #content #side_kanan {
 	float: right;
-	width: 250px;
+	width: 300px;
 	margin-right: 20px;
-	padding: 20px 15px;
+	padding: 15px 15px;
 	padding-top: 1em;
      padding-right: 1em;
      padding-bottom: 1em;
@@ -41,6 +47,14 @@ body {
 	margin-bottom: 15px;
 	padding-bottom: 15px;
 	border-bottom: 1px dashed #333;
+}
+
+img.iklan {
+
+	width: 300px;
+	height: auto;
+
+    float :right;
 }
 
 /* Links */
@@ -80,9 +94,10 @@ a.signup_button {
 #footer {
   text-align: center;
   margin-top: 10px;
+  position : fixed:
 }
 #footer .navigation {
-  float: none;
+  float: center;
 }
 
 /* User show page */
@@ -171,7 +186,8 @@ h1 {
 
 /* An entry in the store catalog */
 #store .entry {
-  border-bottom: 1px dotted #77d ;
+  border-bottom: 2px dotted #77d ;
+   padding-bottom: 1em;
 }
 #store .title {
   font-size: 120%;
@@ -181,6 +197,7 @@ h1 {
   width: 80px;
   float: left;
  padding-right: 1em;
+ padding-bottom: 1em;
 }
 #store .entry h3 {
  margin-bottom: 2px;

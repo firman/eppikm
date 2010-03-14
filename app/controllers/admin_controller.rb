@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+
   def login
     session[:seller_id] = nil
     if request.post?
