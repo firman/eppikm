@@ -4,27 +4,34 @@
 class ApplicationController < ActionController::Base
 
 
-  before_filter :authorize, :except => :login
-  session :session_key => '_eppikm_session_id'
-
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
-
 
   helper :all # include all helpers, all the time
   protect_from_forgery #:secret # => '7tWDI95y4WTOn4oGQJKSrxkUpJmldD60wexlJu1XvYo'
 
+  before_filter { |c| Authorization.current_user = c.current_user }
+
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
+  helper_method :current_user_session, :current_user
 
+
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
+  end
 
   protected
 
-  def authorize
-    unless Seller.find_by_id(session[:seller_id])
-      flash[:notice] = "Silahkan log in"
-      redirect_to :controller => :admin, :action => :login
-    end
+  def permission_denied
+    flash[:error] = "Sorry, you are not allowed to access that page."
+    redirect_to root_url
   end
 
 end

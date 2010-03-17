@@ -1,20 +1,18 @@
-<table class="profile">
-  <tr>
-    <td class="main">
-      <h2>
-         <%= gravatar_for @user %>
-         <%= h @user.name %>
-      </h2>
-    </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>Email</strong>  <%= @user.email %><br />
-      <strong>Kota</strong>  <%= @user.alamat %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), user_path(@user) %>
-    </td>
-  </tr>
-</table>
+<p>
+  <b>Username:</b>
+  <%=h @user.username %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @user.password %>
+</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-

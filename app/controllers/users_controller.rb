@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-
-   def index
-    @users = User.find(:all, :order => :name)
+  # GET /users
+  # GET /users.xml
+  def index
+    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -9,19 +10,10 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /users/1
+  # GET /users/1.xml
   def show
     @user = User.find(params[:id])
-    @title = @user.name
-
-     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
-    end
-  end
-
-  def new
-    @user = User.new
-    @title = "Sign up"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,28 +21,48 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  # GET /users/new
+  # GET /users/new.xml
+  def new
+    @user = User.new
 
-  def create
-    @user = User.new(params[:user])
-    if @user.save
-      flash[:success] = "Selamat datang di E-PPIKM"
-      redirect_to @user
-    else
-      @title = "Sign up"
-      render 'new'
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @user }
     end
   end
 
-def update
-    @user = User.find(params[:id])
+  # GET /users/1/edit
+  def edit
+    @user = current_user
+  end
+
+  # POST /users
+  # POST /users.xml
+  def create
+    @user = User.new(params[:user])
+
+    respond_to do |format|
+      if @user.save
+        flash[:notice] = 'User was successfully created.'
+        format.html { redirect_to root_url }
+        format.xml  { render :xml => @user, :status => :created, :location => @user }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /users/1
+  # PUT /users/1.xml
+  def update
+    @user = current_user
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = "Data anda #{@user.name} berhasil diupdated."
-        format.html { redirect_to(:action=>:index) }
+        flash[:notice] = 'User was successfully updated.'
+        format.html { redirect_to root_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -59,10 +71,10 @@ def update
     end
   end
 
-  # DELETE /selleus/1
-  # DELETE /sellers/1.xml
+  # DELETE /users/1
+  # DELETE /users/1.xml
   def destroy
-    @user = Users.find(params[:id])
+    @user = User.find(params[:id])
     @user.destroy
 
     respond_to do |format|

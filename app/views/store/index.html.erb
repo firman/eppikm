@@ -1,23 +1,26 @@
 <h1>Katalog Produk</h1>
 
-<% for product in @products -%>
-    <div class="entry">
+<% tableize @products,
+  :header => 'Katalog',
+  :generate_css => 'true' do |product| %>
 
-        <%= image_tag(product.image_url) %>
-        <h3><%=h product.title %></h3>
-        <%= product.description %>
-        <div class="price-line">
+  <div class="entry">
+     <h3><%=h product.title %></h3>
+     <p>
+     <% tooltip image_tag(product.image_url) do %>
 
+      <%=h truncate(product.description.gsub(/<.*?>/,''), 100) %>
+     <% end %>
+       <div class="price-line">
         <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
                                                               :separator => ",",
                                                               :delimiter => ".")%>
-        </span>
-
-
+        </span></div>
         <% form_remote_tag :url => { :action => 'add_to_cart', :id => product } do %>
         <%= submit_tag "Add to Cart" %>
 
-     <% end %>
-</div></div>
+
+<% end %>
+
 <% end %>
 

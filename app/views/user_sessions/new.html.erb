@@ -1,0 +1,22 @@
+<div class=="depot_form">
+
+  <fieldset>
+    <legend>Silahkan Log In</legend>
+
+
+    <% form_for @user_session do |f| %>
+      <%= f.error_messages %>
+      <p>
+        <%= f.label :nama %><br />
+        <%= f.text_field :username %>
+      </p>
+      <p>
+        <%= f.label :password %><br />
+        <%= f.password_field :password %>
+      </p>
+      <p><%= f.submit "Submit" %></p>
+    <% end %>
+
+  </fieldset>
+</div>
+

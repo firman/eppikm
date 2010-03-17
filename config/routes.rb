@@ -1,17 +1,20 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users
 
+  map.login "login", :controller => "user_sessions", :action => "new"
+  map.logout "logout", :controller => "user_sessions", :action => "destroy"
+
+  map.resources :user_sessions
+
   map.resources :forums
 
   map.resources :beritas
 
-  map.resources :sellers
 
   map.resources :products
 
   map.about '/about', :controller => 'about', :action => 'about'
   map.help '/help', :controller => 'about', :action => 'help'
-  map.signup '/signup', :controller => 'users', :action => 'new'
   map.store '/store', :controller => 'store', :action => 'index'
 
 

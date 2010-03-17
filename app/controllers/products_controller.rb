@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   # GET /products
   # GET /products.xml
 
@@ -65,6 +66,7 @@ class ProductsController < ApplicationController
   def update
     @title = "Update Produk"
     @product = Product.find(params[:id])
+
 
     respond_to do |format|
       if @product.update_attributes(params[:product])

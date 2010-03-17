@@ -4,15 +4,19 @@
 
 
 
-    <li><%= link_to "About", about_url %></li>
-    <li><%= link_to "Help", help_url %></li>
-     <li><% if session[:seller_id] %>
-                <%= link_to 'Order',   :controller => '#'  %>
-                <%= link_to 'Produk', :controller => 'products'%>
-                <%= link_to 'Pedagang',  :controller => 'sellers' %>
-                <%= link_to 'User',  :controller => 'users' %>
 
-    <% end %></li>
+    <% if :admin %>
+      <li><%= link_to "About", about_url %></li>
+      <li><%= link_to "Help", help_url %></li>
+      <li><%= link_to 'Order',   :controller => ''  %></li>
+      <li><%= link_to 'Produk', :controller => 'products'%></li>
+      <li><%= link_to 'Pedagang',  :controller => 'sellers' %></li>
+      <li><%= link_to 'User',  :controller => 'users' %></li>
+
+    <% else %>
+      <li><%= link_to "About", about_url %></li>
+      <li><%= link_to "Help", help_url %></li>
+    <% end %>
 
   </ul>
 </div>
