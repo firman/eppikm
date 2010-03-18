@@ -1,60 +1,39 @@
 
 <div id="content">
 
-  <div id="main_slide">
-
-  </div>
-
   <div id="main_berita">
-
     <h2>E-Marketing PPIKM</h2>
     <h1>(Pusat Promosi Industri Kayu dan Meubel)</h1>
-    <p>
-        Silahkan cari meubel dan firniture yang anda inginkan
-       <%= link_to "Katalog Produk", store_url %>
-    </p>
 
+        <% tableize @products,
+          :header => 'Katalog',
+          :generate_css => 'true' do |product| %>
 
-        <% for product in @products -%>
-        <div id="store">
-        <div class="entry">
+          <div class="entry">
+             <h3><%=h product.title %></h3>
 
             <%= image_tag(product.image_url) %>
-            <h3><%=h product.title %></h3>
-            <%= product.description %>
-            <div class="price-line">
 
-            <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
-                                                                  :separator => ",",
-                                                                  :delimiter => ".")%>
-            </span>
-
-            </div>
-        </div>
-        </div>
-          <% end %>
+               <div class="price-line">
+                <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
+                                                                      :separator => ",",
+                                                                      :delimiter => ".")%>
+                </span></div>
+        <% end %>
 
   </div>
 
     <div id="side_kanan">
-			<div class="side_column_section">
+			  <div class="side_column_section">
+				   <%= @map.div(:width => 350, :height => 250) %>
+        </div>
 
-				 <%= @map.div(:width => 350, :height => 250) %>
-      </div>
+        <div class="side_column_section">
+          <img src="images/logokikm.jpg" class="iklan">
+        </div>
 
+        <div class="side_column_section">
+        </div>
 
-            <div class="side_column_section">
-
-            <img src="images/logokikm.jpg" class="iklan">
-
-
-            </div>
-
-            <div class="side_column_section">
-
-
-
-            </div>
-
-</div>
+    </div>
 
