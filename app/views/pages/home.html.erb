@@ -1,6 +1,6 @@
 
-<div id="content">
 
+<div id="content">
   <div id="main_berita">
     <h2>E-Marketing PPIKM</h2>
     <h1>(Pusat Promosi Industri Kayu dan Meubel)</h1>
@@ -11,16 +11,13 @@
 
           <div class="entry">
              <h3><%=h product.title %></h3>
-
             <%= image_tag(product.image_url) %>
 
-               <div class="price-line">
                 <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
                                                                       :separator => ",",
                                                                       :delimiter => ".")%>
                 </span></div>
         <% end %>
-
   </div>
 
     <div id="side_kanan">
@@ -30,9 +27,6 @@
 
         <div class="side_column_section">
           <img src="images/logokikm.jpg" class="iklan">
-        </div>
-
-        <div class="side_column_section">
         </div>
 
     </div>

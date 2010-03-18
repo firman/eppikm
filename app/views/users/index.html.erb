@@ -1,24 +1,32 @@
-<h1>Listing users</h1>
+<div id="product-list">
+  <h1>Daftar User</h1>
 
-<table>
-  <tr>
-    <th>Username</th>
-    <th>Email</th>
-    <th>Password</th>
-  </tr>
+  <table cellpadding="5" cellspacing="0">
+  <% for user in @users %>
+    <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%=h user.username %></td>
-    <td><%=h user.email %></td>
-    <td><%=h user.password %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+     <td>
+         <span class ="list-title"><%=h user.username %></span>
+     </td>
+
+    <td width="10%">
+         <td><span class="list-seller"><%=h user.email %></span>
+    </td>
+
+    <td class="list-actions">
+
+    <%= link_to 'Show', user %><br/>
+    <%= link_to 'Edit', edit_user_path(user) %><br/>
+    <%= link_to 'Hapus', user,
+                            :confirm => 'Yakin nih, penjual ini mau dihapus',
+                            :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
 
-<%= link_to 'New user', new_user_path %>
+<%= link_to 'tambah user', new_user_path %>
+
