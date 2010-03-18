@@ -6,9 +6,7 @@
 
   <div class="entry">
      <h3><%=h product.title %></h3>
-     <p>
      <% tooltip image_tag(product.image_url) do %>
-
       <%=h truncate(product.description.gsub(/<.*?>/,''), 100) %>
      <% end %>
        <div class="price-line">

@@ -51,7 +51,7 @@ body {
 
 img.iklan {
 
-	width: 250px;
+	width: 200px;
 	height: auto;
 
     float :right;
@@ -339,6 +339,7 @@ div.field, div.actions {
 
 #bg_menu {
 	position: relative;
+	margin: 0 auto;
 	clear: both;
 	width: 930px;
 	height: 80px;
