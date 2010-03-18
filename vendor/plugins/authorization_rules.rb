@@ -14,6 +14,7 @@ authorization do
   role :penjual do
     includes :guest
     has_permission_on :products, :to => [:index, :new, :create, :edit, :update, :delete]
+  end
 
 end
 

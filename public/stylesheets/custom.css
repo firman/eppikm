@@ -29,7 +29,7 @@ body {
 
 #content #main_berita {
 	float: left;
-	width: 500px;
+	width: 450px;
 	padding: 15px 0;
 }
 
@@ -51,7 +51,7 @@ body {
 
 img.iklan {
 
-	width: 300px;
+	width: 250px;
 	height: auto;
 
     float :right;
