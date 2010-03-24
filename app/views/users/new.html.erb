@@ -19,6 +19,14 @@
     <label for="user_password_confirmation">Konfirmasi:</label>
     <%= f.password_field :password_confirmation, :size => 40 %>
   </p>
+ <p>
+  <%= f.label :roles %><br />
+  <% for role in User::ROLES %>
+    <%= check_box_tag "user[roles][]", role, @user.roles.include?(role) %>
+    <%=h role.humanize %><br />
+  <% end %>
+  <%= hidden_field_tag "user[roles][]", "" %>
+</p>
   <p>
     <%= f.submit "proses" , :class => "submit" %>
   </p>

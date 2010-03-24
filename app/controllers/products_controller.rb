@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  filter_resource_access
 
   # GET /products
   # GET /products.xml
@@ -17,7 +18,6 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @title = "Lihat Produk"
-    @product = Product.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,7 +29,6 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @title = "Tambah Produk Baru"
-    @product = Product.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,14 +39,13 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @title = "Edit Produk"
-    @product = Product.find(params[:id])
   end
 
   # POST /products
   # POST /products.xml
   def create
     @title = "Tambah Produk"
-    @product = Product.new(params[:product])
+    @product.user = current_user
 
     respond_to do |format|
       if @product.save
@@ -65,8 +63,6 @@ class ProductsController < ApplicationController
   # PUT /products/1.xml
   def update
     @title = "Update Produk"
-    @product = Product.find(params[:id])
-
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
@@ -84,7 +80,6 @@ class ProductsController < ApplicationController
   # DELETE /products/1.xml
   def destroy
     @title = "Delete Produk"
-    @product = Product.find(params[:id])
     @product.destroy
 
     respond_to do |format|

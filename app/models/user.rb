@@ -15,11 +15,26 @@
 
 class User < ActiveRecord::Base
   acts_as_authentic
+  has_many :products
+  has_many :assignments
+  has_many :roles, :through => :assignments
 
-    def role_symbols
-      roles.map do |role|
-        role.name.underscore.to_sym
-      end
-    end
+  named_scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0"} }
+
+
+  ROLES = %w[admin pelanggan penjual]
+  def roles=(roles)
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
+  end
+
+  def roles
+    ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }
+  end
+
+  def role_symbols
+    roles.map(&:to_sym)
+  end
+
+
 end
 

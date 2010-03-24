@@ -15,6 +15,10 @@
     <label for="user_password">Password:</label>
     <%= f.password_field :password, :size => 40 %>
   </p>
+   <p>
+    <label for="user_password_confirmation">Konfirmasi:</label>
+    <%= f.password_field :password_confirmation, :size => 40 %>
+  </p>
   <p>
     <%= f.submit 'Update' %>
   </p>

@@ -9,19 +9,17 @@
   </head>
 
   <body id="store">
-    <div class="container">
-      <%= render 'layouts/header' %>
+     <div class="container">
+      <% tabnav :main do %>
 
-        <div id="content" class="round">
+            <% flash.each do |key, value| %>
+              <div class="flash <%= key %>"><%= value %></div>
+            <% end %>
 
-                <% if flash[:notice] -%>
-                  <div id="notice"><%= flash[:notice] %></div>
-                <% end -%>
-
-                  <%= yield :layout %>
-
+            <% navigation :main %>
+              <%= yield %>
+            <% end %>
         </div>
-        <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

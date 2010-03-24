@@ -9,23 +9,18 @@
   </head>
 
   <body>
-
-
     <div class="container">
-        <%= render 'layouts/header' %>
-
-          <div id="content" class="round">
-
+      
+      <% tabnav :main do %>
             <% flash.each do |key, value| %>
               <div class="flash <%= key %>"><%= value %></div>
             <% end %>
 
-            <%= yield %>
-         </div>
+            <% navigation :main %>
+              <%= yield %>
+            <% end %>
+         
     </div>
-        <%= render 'layouts/footer' %>
-
-
   </body>
 </html>
 
