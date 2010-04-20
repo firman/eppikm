@@ -1,3 +1,5 @@
+.clear { clear: both; height: 0; }
+
 .container {
   width: 950px;
   margin: 0 auto;
@@ -7,7 +9,7 @@ body {
     clear: both;
 	width: 100%;
 	margin: 0 auto;
-	background: url(../images/bg_wrapper.jpg) center top repeat-y;
+	background: url(../images/wooden_bg.gif) center top repeat;
 }
 
 /* Links */
@@ -69,31 +71,35 @@ td.sidebar {
   text-align:    right;
   padding-left: 1em;
 }
-#product-list .list-line-even {
 
+#product-list .list-line-even {
   background: #e0f8f8 ;
 }
-#product-list .list-line-odd {
 
+#product-list .list-line-odd {
   background: #f8b0f8 ;
 }
 
 /* Styles for main page */
 
-
 #main {
-  margin-left: 12em;
+  float: left;
+  width: 75%;
   padding-top: 4ex;
-  padding-left: 2em;
+  padding: 2em 2em;
   background: white;
+  -moz-border-radius:    5px;
+  -webkit-border-radius: 5px;
 }
 #side {
-  float: left;
+  float: right;
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
-  width: 12em;
+  width: 14em;
   background: #141 ;
+  -moz-border-radius:    5px;
+  -webkit-border-radius: 5px;
 }
 #side a {
   color: #bfb ;
@@ -104,13 +110,12 @@ h1 {
   font: 150% sans-serif;
   color: #226 ;
   border-bottom: 3px dotted #77d ;
-
 }
 
 /* An entry in the store catalog */
 #store .entry {
   border-bottom: 2px dotted #77d ;
-   padding-bottom: 1em;
+  padding-bottom: 1em;
 }
 #store .title {
   font-size: 120%;
@@ -160,7 +165,6 @@ h1 {
   color:       white;
 }
 #cart table {
-
   border-top: 1px dotted #595 ;
   border-bottom: 1px dotted #595 ;
   margin-bottom: 10px;
@@ -258,6 +262,8 @@ div.field, div.actions {
    list-style: square;
 }
 
+
+
 .main_tabnav {
 width: 950px;
 height: 65px;
@@ -270,7 +276,7 @@ clear: both;
 
 .main_tabnav ul {
 margin: 0;
-padding: 5px 0 0 0;
+padding: 10px 0 0 0;
 }
 
 .main_tabnav li {
@@ -300,50 +306,104 @@ float: right;
 .main_tabnav li a.active {
 color: #ebebeb;
 font-weight: bold;
-background:#004000;
 }
 
 .main_tabnav li a:hover {
-color: #004000;
+color: #A0A0A0;
 }
 
 .main_tabnav li a.active:hover {
-color: #ebebeb;
+color: #303030;
+}
+
+.main_tabnav li a.active:visited {
+color:  #303030;
 }
 
 .main_tabnav_content {
-background-color: #fff;
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  margin-top: 0,5em;
-  font-size: 110%;
-  padding: 15px;
+  padding-top: 15px;
 }
 
-#main_tabnav_content_berita {
+#main_tabnav_berita {
 	float: left;
-	width: 400px;
-	padding: 15px 0;
+	width: 60%;
+	padding: 15px 15px 15px;  
+	background-color: #fff;
+    -moz-border-radius:    5px;
+    -webkit-border-radius: 5px;
 }
 
-#main_tabnav_content_side {
+#main_tabnav_berita .block .content {
+  background: #FFF;
+  padding-top: 1px;
+}
+
+#main_tabnav_berita .block .content h2 {
+  margin-left: 15px;
+}
+
+
+#tabnav_sidebar {
 	float: right;
-	width: 300px;
-	margin-right: 15px;
-	padding: 15px 15px;
-	padding-top: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
+	width: 30%;
 }
 
-#main_tabnav_content_side_section {
-	margin-bottom: 15px;
-	padding-bottom: 15px;
-	border-bottom: 1px dashed #333;
+#tabnav_sidebar h3 {  
+  padding: 10px 15px;
+  margin: 0;
+  font-size: 13px;
+  background: #ff7900;
+  color: #FFF;
+  border-bottom: 10px solid #262626;
+}
+
+#tabnav_sidebar .block {
+  margin-bottom: 20px;
+  background: #FFF;
+}
+
+#tabnav_sidebar .block .content {
+  padding: 0 0px;
+  overflow : hidden;
+}
+
+#tabnav_sidebar ul.navigation li a:link, #tabnav_sidebar ul.navigation li a:visited {
+  display: block;
+  padding: 10px 15px;
+}
+
+#tabnav_sidebar .block .tabnav_sidebar-block, #tabnav_sidebar .notice {
+  padding:10px;
+}
+
+#tabnav_sidebar ul li a:link, #tabnav_sidebar ul li a:visited {
+  background: #FFF;
+  border-bottom: 1px solid #F0F0EE;
+  text-decoration: none;
+}
+
+#tabnav_sidebar ul li a:hover, #tabnav_sidebar ul li a:active {
+  background: #863800;
+  color: #FFF;
+}
+
+/* rounded */
+#main, #main-tabnav, #main-tabnav_berita li, #main .block, #tabnav_sidebar .block, #tabnav_sidebar h3, ul.list li {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+
+#tabnav_sidebar, #tabnav_sidebar .block, #main_tabnav_berita .block, #tabnav_sidebar ul.navigation, ul.list li {
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
 }
 
 img.iklan {
 	width: 200px;
+    padding: 15px 15px 15px;  
 	height: auto;
-    float :right;
 }

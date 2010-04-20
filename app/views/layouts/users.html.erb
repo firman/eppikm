@@ -8,7 +8,7 @@
 
   </head>
 
-  <body id="store">
+  <body>
      <div class="container">
       <% tabnav :main do %>
 
@@ -16,7 +16,7 @@
               <div class="flash <%= key %>"><%= value %></div>
             <% end %>
 
-            <% navigation :main %>
+            <div id="main_tabnav_berita">
               <%= yield %>
             <% end %>
         </div>

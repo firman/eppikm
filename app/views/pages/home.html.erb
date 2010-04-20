@@ -1,5 +1,5 @@
 
-  <div id="main_tabnav_content_berita">
+  <div id="main_tabnav_berita">
     <h2>E-Marketing PPIKM</h2>
     <h1>(Pusat Promosi Industri Kayu dan Meubel)</h1>
 
@@ -18,14 +18,20 @@
         <% end %>
   </div>
 
-  <div id="main_tabnav_content_side">
-		  <div id="main_tabnav_content_side_section">
-			   <%= @map.div(:width => 350, :height => 250) %>
-      </div>
+  <div id="tabnav_sidebar">
+        <div class="block">
+          <h3>Lokasi Gedung PPIKM</h3>
+          <div class="content">
+            <%= @map.div(:width => 300, :height => 250) %>
+          </div>
+        </div>
 
-      <div id="side_column_section">
-        <img src="images/logokikm.jpg" class="iklan">
-      </div>
-
+        <div class="block">
+          <h3>Sponsor</h3>
+          <div class="content">
+            <p><img src="images/logokikm.jpg" class="iklan"></p>
+          </div>
+        </div>
   </div>
+
 
