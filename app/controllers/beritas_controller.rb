@@ -1,4 +1,5 @@
 class BeritasController < ApplicationController
+  filter_resource_access
   # GET /beritas
   # GET /beritas.xml
   def index
@@ -13,7 +14,7 @@ class BeritasController < ApplicationController
   # GET /beritas/1
   # GET /beritas/1.xml
   def show
-    @berita = Berita.find(params[:id])
+  
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +35,7 @@ class BeritasController < ApplicationController
 
   # GET /beritas/1/edit
   def edit
-    @berita = Berita.find(params[:id])
+  
   end
 
   # POST /beritas
@@ -57,8 +58,7 @@ class BeritasController < ApplicationController
   # PUT /beritas/1
   # PUT /beritas/1.xml
   def update
-    @berita = Berita.find(params[:id])
-
+  
     respond_to do |format|
       if @berita.update_attributes(params[:berita])
         flash[:notice] = 'Berita was successfully updated.'
@@ -74,8 +74,7 @@ class BeritasController < ApplicationController
   # DELETE /beritas/1
   # DELETE /beritas/1.xml
   def destroy
-    @berita = Berita.find(params[:id])
-    @berita.destroy
+      @berita.destroy
 
     respond_to do |format|
       format.html { redirect_to(beritas_url) }

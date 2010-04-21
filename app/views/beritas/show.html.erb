@@ -8,6 +8,7 @@
   <%=h @berita.content %>
 </p>
 
-
-<%= link_to 'Edit', edit_berita_path(@berita) %> |
+<% if permitted_to? :edit, @berita %>   
+  <%= link_to 'Edit', edit_berita_path(@berita) %> |
+<%end%>
 <%= link_to 'Back', beritas_path %>

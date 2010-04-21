@@ -22,7 +22,7 @@ end # method new
 # attempt to create a new forum with the parameters passed in
 def create
    @forum = Forum.new( params[ :forum ] )
-   @forum.administrator = session[ :seller ].name
+   @forum.administrator = session[ :user ].name
    if @forum.save # if save method was successful
       flash[ :notice ] = 'Forum was successfully created.'
       redirect_to :action => 'list'
@@ -32,12 +32,12 @@ def create
    end # method create
    # set up the delete web page
    def delete
-      if ( session[ :seller ] == nil ) # if user is not logged in
+      if ( session[ :user ] == nil ) # if user is not logged in
          flash[ :error ] = 'you must be logged in to complete this action'
          redirect_to :action => "index" and return
       else
          @forums = Forum.find( :all,
-            :conditions => "administrator = '#{ session[:seller].name }'" )
+            :conditions => "administrator = '#{ session[:user].name }'" )
       end # if else
    end # method delete
    # delete a forum with a specified parameter

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100316125409
+# Schema version: 20100330191514
 #
 # Table name: products
 #

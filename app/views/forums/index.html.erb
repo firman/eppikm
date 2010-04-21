@@ -7,8 +7,14 @@
 <% @forums.each do |forum| %>
   <tr>
     <td><%= link_to 'Show', forum %></td>
-    <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
-    <td><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+    <% if permitted_to? :edit, @forum %>   
+      <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
+    <%end%>
+    
+    <% if permitted_to? :destroy, @berita %>  
+      <td><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>

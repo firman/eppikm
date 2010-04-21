@@ -1,4 +1,3 @@
-
 <div id="product-list">
   <h1>Daftar Berita</h1>
   <table cellpadding="5" cellspacing="0">
@@ -14,10 +13,16 @@
 
 <td class="list-actions">
          <%= link_to 'Show', berita %><br/>
+      
+        <% if permitted_to? :edit, @berita %>   
          <%= link_to 'Edit', edit_berita_path(berita) %><br/>
+        <% end %>
+        
+        <% if permitted_to? :destroy, @berita %>  
          <%= link_to 'Destroy', berita,
                      :confirm => 'Yakin nih, berita ini dihapus?',
                      :method => :delete %>
+        <%end%>
        </td>
 
     </tr>
@@ -25,5 +30,6 @@
   </table>
 </div>
 <br />
-<%= link_to 'Bikin berita baru', new_berita_path %>
-
+<% if permitted_to? :create, Berita.new %>  
+  <%= link_to 'Bikin berita baru', new_berita_path %>
+<%end%>
