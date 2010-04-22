@@ -11,10 +11,10 @@
              <h3><%=h product.title %></h3>
             <%= image_tag(product.image_url) %>
 
-                <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
+                <div class="price"><%= number_to_currency(product.price, :unit => "Rp.",
                                                                       :separator => ",",
                                                                       :delimiter => ".")%>
-                </span></div>
+                </div></div>
         <% end %>
   </div>
 

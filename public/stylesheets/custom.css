@@ -5,6 +5,7 @@
   margin: 0 auto;
   color: #000000;
 }
+
 body {
     clear: both;
 	width: 100%;
@@ -47,7 +48,6 @@ td.sidebar {
 }
 
 /* Global styles */
-
 #notice {
   border: 2px solid red;
   padding: 1em;
