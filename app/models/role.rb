@@ -11,6 +11,6 @@
 
 class Role < ActiveRecord::Base
   has_many :assignments
-  has_many :user, :through => :assignments
+  has_many :users, :through => :assignments
 end
 

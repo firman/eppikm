@@ -10,11 +10,11 @@ class StoreController < ApplicationController
   end
 
   def add_to_cart
-      begin
+    begin
       product = Product.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      logger.error("Attempt to access invalid product #{params[:id]}" )
-      redirect_to_index("Invalid product" )
+      logger.error("produk tidak dapat diakses #{params[:id]}" )
+      redirect_to_index("Salah produk" )
     else
       @current_item = @cart.add_product(product)
       if request.xhr?

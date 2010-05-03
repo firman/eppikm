@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100324080224) do
+ActiveRecord::Schema.define(:version => 20100503150511) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "beritas", :force => true do |t|
     t.string   "title"
@@ -57,24 +64,12 @@ ActiveRecord::Schema.define(:version => 20100324080224) do
     t.integer  "price",       :limit => 10, :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",                                                  :null => false
+    t.integer  "page_count"
   end
 
   create_table "roles", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "seller_products", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sellers", :force => true do |t|
     t.string   "name"
-    t.string   "email"
-    t.text     "alamat"
-    t.string   "hashed_password"
-    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

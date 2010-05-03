@@ -1,7 +1,7 @@
 authorization do
   
   role :admin do
-    has_permission_on [:products, :beritas, :user], :to => [:index, :show, :new, :create, :edit, :update, :destroy]
+    has_permission_on [:products, :beritas, :users], :to => [:index, :show, :new, :create, :edit, :update, :destroy]
     
   end
 

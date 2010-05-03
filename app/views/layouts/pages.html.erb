@@ -15,13 +15,8 @@
     <div class="container">
       
       <% tabnav :main do %>
-            <% flash.each do |key, value| %>
-              <div class="flash <%= key %>"><%= value %></div>
-            <% end %>
-
-            <% navigation :main %>
-              <%= yield %>
-            <% end %>
+        <%= yield %>
+      <% end %>
          
     </div>
   </body>

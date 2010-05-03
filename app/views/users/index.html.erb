@@ -1,6 +1,10 @@
+
+
 <div id="product-list">
   <h1>Daftar User</h1>
-
+  
+  <%= will_paginate %>
+  
   <table cellpadding="5" cellspacing="0">
   <% for user in @users %>
     <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
@@ -24,9 +28,13 @@
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate %>
+
 </div>
 
 <br />
 
 <%= link_to 'tambah user', new_user_path %>
+
 

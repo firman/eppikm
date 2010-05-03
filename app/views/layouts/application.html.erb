@@ -9,17 +9,13 @@
   </head>
 
   <body>
-    <div class="container">
-    
-      
+    <div class="container">       
       <% tabnav :main do %>
-            <% flash.each do |key, value| %>
-              <div class="flash <%= key %>"><%= value %></div>
-            <% end %>
-<div id="main_tabnav_berita">
+        <div id="main_tabnav_berita">
+
               <%= yield %>
             <% end %>
-         </div>
+        </div>
     </div>
   </body>
 </html>

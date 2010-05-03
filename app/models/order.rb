@@ -12,11 +12,9 @@
 #
 
 class Order < ActiveRecord::Base
-  validates_presence_of :nama, :email, :alamat
-
+  validates_presence_of :nama, :email
+  belongs_to :user
   has_many :line_items
-
-
 
   def add_line_items_from_cart(cart)
     cart.items.each do |item|

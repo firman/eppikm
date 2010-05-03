@@ -16,15 +16,17 @@
 class Product < ActiveRecord::Base
 has_many :orders, :through => :line_items
 has_many :line_items
+belongs_to :user
+
+acts_as_ferret :fields => [:title]
 
   def self.find_products_for_sale
     find(:all, :order => "title")
   end
 
-  validates_presence_of :title, :description, :image_url, :seller
+  validates_presence_of :title, :description, :image_url
   validates_numericality_of :price
   validate :price_must_be_at_least_a_cent
-  validates_uniqueness_of :title
   validates_format_of :image_url,
                       :with => %r{\.(gif|jpg|png)$}i,
                       :message => 'format gambar harus dalam GIF/JPG/PNG.(gif|jpg\png)'

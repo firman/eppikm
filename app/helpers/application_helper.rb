@@ -10,6 +10,11 @@ module ApplicationHelper
     end
     end
 
+  def display_tags(product)
+    product.tags.collect{|tag| tag.name }.join(", ") if product.tags
+  end
+
+
     def logo
     logo_title = image_tag("rails.png")
     logo_ganti = "E-PPIKM"

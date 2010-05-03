@@ -1,0 +1,10 @@
+<h3>Daftar Pemesan <%= @product.title %></h3>
+
+<ul>
+  <% for order in @orders -%>
+    <li>
+      <%= mail_to order.email, order.nama %>
+    </li>
+    
+  <% end -%>
+<ul>

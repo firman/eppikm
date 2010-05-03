@@ -84,7 +84,7 @@ td.sidebar {
 
 #main {
   float: left;
-  width: 75%;
+  width: 70%;
   padding-top: 4ex;
   padding: 2em 2em;
   background: white;
@@ -93,13 +93,12 @@ td.sidebar {
 }
 #side {
   float: right;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  width: 14em;
-  background: #141 ;
+  padding: 1em;
+  width: 20%;
+  background: url(../images/wooden_bg.gif) repeat ;
   -moz-border-radius:    5px;
   -webkit-border-radius: 5px;
+  border: 3px solid white ;
 }
 #side a {
   color: #bfb ;
@@ -153,7 +152,7 @@ h1 {
   font: 120% bold;
 }
 .item-price, .total-line {
-  text-align: right;
+  text-align: left;
 }
 .total-line .total-cell {
   font-weight: bold;

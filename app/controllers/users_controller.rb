@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.all
+    @users = User.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,7 +34,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = current_user
+
   end
 
   # POST /users
@@ -45,7 +44,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = 'User was successfully created.'
+        flash[:notice] = 'User baru berhasil dibuat'
         format.html { redirect_to root_url }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
@@ -62,7 +61,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = 'User was successfully updated.'
+        flash[:notice] = 'data anda berhasil di-update.'
         format.html { redirect_to root_url }
         format.xml  { head :ok }
       else
@@ -75,8 +74,8 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+  @user_session = UserSession.find
+  @user_session.destroy
 
     respond_to do |format|
       format.html { redirect_to(users_url) }

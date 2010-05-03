@@ -27,7 +27,7 @@
               <%= link_to 'User',  :controller => 'users'   %><br />
               <br />
               <%= link_to "Logout", logout_path %><br />
-              <%= link_to "Edit profil", edit_user_path(:current) %><br />
+              <%= link_to "Edit profil", edit_user_path(:current_user) %><br />
             <% else %>
               <br />
               <%= link_to "Log in", login_path %><br />
