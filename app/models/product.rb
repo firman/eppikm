@@ -40,6 +40,14 @@ acts_as_ferret :fields => [:title]
   accepts_nested_attributes_for :tags, :allow_destroy => :true,
     :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? } }
 
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
 
   protected
     def price_must_be_at_least_a_cent

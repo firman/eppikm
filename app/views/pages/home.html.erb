@@ -5,6 +5,13 @@
   
     <h2>E-Marketing PPIKM</h2>
     <h1>(Pusat Promosi Industri Kayu dan Meubel)</h1>
+    <% form_tag products_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+    <% end %>
+
 
     <% tableize @products,
   :header => 'Katalog',

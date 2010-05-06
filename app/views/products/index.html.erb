@@ -1,3 +1,10 @@
+<% form_tag products_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <div id="product-list">
   <h1>Daftar Produk</h1>
   <table cellpadding="5" cellspacing="0">

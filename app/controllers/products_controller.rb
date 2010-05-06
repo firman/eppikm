@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def index
     @title = "Index Produk"
-    @products = Product.paginate(:page => params[:page])
+    @products = Product.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

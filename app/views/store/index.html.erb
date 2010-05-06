@@ -1,4 +1,10 @@
 <h1>Katalog Produk</h1>
+<% form_tag store_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
 <% tableize @products,
   :header => 'Katalog',
@@ -6,6 +12,7 @@
 
   <div class="entry">
      <h3><%=h product.title %></h3>
+     
      <% tooltip image_tag(product.image_url) do %>
       <%=h truncate(product.description.gsub(/<.*?>/,''), 100) %>
      <% end %>
@@ -13,7 +20,9 @@
         <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
                                                               :separator => ",",
                                                               :delimiter => ".")%>
-        </span></div>
+        </span>
+        </div>
+        <p><%=h product.user.username %></p>
         <% form_remote_tag :url => { :action => 'add_to_cart', :id => product } do %>
         <%= submit_tag "Add to Cart" %>
 

@@ -5,7 +5,7 @@ class StoreController < ApplicationController
 
   def index
     @title = "Katalog Produk"
-    @products = Product.find_products_for_sale
+    @products = Product.search(params[:search])
     @cart = find_cart
   end
 
