@@ -83,9 +83,17 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
+      flash[:notice] = "Product deleted"
       format.html { redirect_to(products_url) }
       format.xml  { head :ok }
     end
   end
+  
+  private
+
+    def load_data
+      @users = User.find(:all)
+      @tags = Tag.find(:all)     
+    end
 end
 

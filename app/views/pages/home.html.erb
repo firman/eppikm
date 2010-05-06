@@ -6,19 +6,21 @@
     <h2>E-Marketing PPIKM</h2>
     <h1>(Pusat Promosi Industri Kayu dan Meubel)</h1>
 
-        <% tableize @products,
-          :header => 'Katalog',
-          :generate_css => 'true' do |product| %>
+    <% tableize @products,
+  :header => 'Katalog',
+  :generate_css => 'true' do |product| %>
 
-          <div class="entry">
-             <h3><%=h product.title %></h3>
-            <%= image_tag(product.image_url) %>
+  <div class="entry">
+     <h3><%=h product.title %></h3>
+     <%= image_tag product.image_url %>
+ 
+        <span class="price"><%= number_to_currency(product.price, :unit => "Rp.",
+                                                              :separator => ",",
+                                                              :delimiter => ".")%>
+        </span>
 
-                <div class="price"><%= number_to_currency(product.price, :unit => "Rp.",
-                                                                      :separator => ",",
-                                                                      :delimiter => ".")%>
-                </div></div>
-        <% end %>
+    <% end %>
+
   </div>
 
   <div id="tabnav_sidebar">

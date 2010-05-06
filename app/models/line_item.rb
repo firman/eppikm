@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100330191514
+# Schema version: 20100503150511
 #
 # Table name: line_items
 #
@@ -15,6 +15,8 @@
 class LineItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :product
+  
+  
   def self.from_cart_item(cart_item)
     li = self.new
     li.product      = cart_item.product

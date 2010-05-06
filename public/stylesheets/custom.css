@@ -79,9 +79,7 @@ td.sidebar {
 #product-list .list-line-odd {
   background: #f8b0f8 ;
 }
-
 /* Styles for main page */
-
 #main {
   float: left;
   width: 70%;
@@ -226,7 +224,7 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
-  fieldWithErrors {
+fieldWithErrors {
    padding: 2px;
    background-color: red;
    display: table;

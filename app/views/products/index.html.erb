@@ -9,7 +9,7 @@
          <%= image_tag product.image_url, :class => 'list-image' %>
        </td>
        <td>
-         <span class ="list-seller"><%=h product.user_id %></span>
+         <span class ="list-seller"><%=h product.user.username %></span>
        </td>
        <td width="60%">
          <span class="list-title"><%=h product.title %></span><br />

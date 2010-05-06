@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100330191514
+# Schema version: 20100503150511
 #
 # Table name: products
 #
@@ -11,6 +11,8 @@
 #  price       :integer(10)
 #  created_at  :datetime
 #  updated_at  :datetime
+#  user_id     :integer(4)      not null
+#  page_count  :integer(4)
 #
 
 class Product < ActiveRecord::Base

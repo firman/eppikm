@@ -74,8 +74,13 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy
-  @user_session = UserSession.find
-  @user_session.destroy
+    @user = User.find(params[:id])
+    begin
+      flash[:notice] = "User #{@user.username} deleted"
+      @user.destroy
+    rescue Exception => e
+      flash[:notice] = e.message
+    end
 
     respond_to do |format|
       format.html { redirect_to(users_url) }
