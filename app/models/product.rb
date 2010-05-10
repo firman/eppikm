@@ -18,9 +18,8 @@
 class Product < ActiveRecord::Base
 has_many :orders, :through => :line_items
 has_many :line_items
+has_many :tags
 belongs_to :user
-
-acts_as_ferret :fields => [:title]
 
   def self.find_products_for_sale
     find(:all, :order => "title")
@@ -33,22 +32,9 @@ acts_as_ferret :fields => [:title]
                       :with => %r{\.(gif|jpg|png)$}i,
                       :message => 'format gambar harus dalam GIF/JPG/PNG.(gif|jpg\png)'
 
-
-  has_many :tags
-
-
   accepts_nested_attributes_for :tags, :allow_destroy => :true,
     :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? } }
-
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
-    else
-      find(:all)
-    end
-  end
-
-
+  
   protected
     def price_must_be_at_least_a_cent
       errors.add(:price, 'should be at least 1') if price.nil? || price < 1

@@ -1,17 +1,30 @@
-<h1>Katalog Produk</h1>
-<% form_tag store_path, :method => 'get' do %>
+<% form_for @search do |f| %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= f.label :title_like, "Nama" %><br />
+    <%= f.text_field :title_like %>
+  </p>
+  <p>
+    <%= f.label :price_gte, "Jangkauan Harga" %><br />
+    <%= f.text_field :price_gte, :size => 8 %> - <%= f.text_field :price_lte, :size => 8 %>
+  </p>
+  <p>
+    <%= f.submit "Submit" %>
   </p>
 <% end %>
+
+<p>
+  Sort by:
+  <%= order @search, :by => :title %> |
+  <%= order @search, :by => :price %> |
+  <%= order @search, :by => :created_at %>
+</p>
 
 <% tableize @products,
   :header => 'Katalog',
   :generate_css => 'true' do |product| %>
 
   <div class="entry">
-     <h3><%=h product.title %></h3>
+     <h3><%= link_to product.title, :action => :show, :id => product %></h3>
      
      <% tooltip image_tag(product.image_url) do %>
       <%=h truncate(product.description.gsub(/<.*?>/,''), 100) %>
@@ -28,4 +41,3 @@
 
     <% end %>
 <% end %>
-

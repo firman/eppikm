@@ -1,0 +1,8 @@
+  <% for product in @products %>
+    <dt><%= link_to product.title.t, :action => "show", :id => product %></dt>
+    <% for user in product.users %>
+      <dd><%= user.username %></dd>
+    <% end %>
+      <dd>Price: $<%= sprintf("%.2f", product.price) %></dd>
+  <% end %>
+

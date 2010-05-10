@@ -5,9 +5,16 @@ class StoreController < ApplicationController
 
   def index
     @title = "Katalog Produk"
-    @products = Product.search(params[:search])
+    @search = Product.search(params[:search])
+    @products = @search.all
     @cart = find_cart
   end
+  
+  def show
+    @product = Product.find(params[:id]) rescue nil
+    return render(:text => "Tidak ditemukan", :status => 404) unless @product
+  end
+
 
   def add_to_cart
     begin
