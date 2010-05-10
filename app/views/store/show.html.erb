@@ -1,0 +1,10 @@
+<h2>by <%= @product.user.username %></h2>
+<%= image_tag url_for(:product) unless @product.image_url.blank? %>
+<dl>
+  <dt>Harga</dt>
+  <dd>$<%= sprintf("%0.2f", @product.price) -%></dd>
+  <dt>Penjual</dt>
+  <dd><%= @product.user.username %></dd>
+</dl>
+<p><%= link_to "Kembali", :action => "index" %></p>
+

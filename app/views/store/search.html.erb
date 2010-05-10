@@ -1,0 +1,5 @@
+<%= render :partial => "search_box" %>
+<% if @products %>
+<p>Pencarian anda "<% params[:q] %>" produced
+<% render :partial => "products" %>
+<% end %>

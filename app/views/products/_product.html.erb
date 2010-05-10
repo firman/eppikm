@@ -1,24 +1,3 @@
-<% form_for @search do |f| %>
-  <p>
-    <%= f.label :title_like, "Nama" %><br />
-    <%= f.text_field :title_like %>
-  </p>
-  <p>
-    <%= f.label :price_gte, "Jangkauan Harga" %><br />
-    <%= f.text_field :price_gte, :size => 8 %> - <%= f.text_field :price_lte, :size => 8 %>
-  </p>
-  <p>
-    <%= f.submit "Submit" %>
-  </p>
-<% end %>
-
-<p>
-  Urut berdasarkan:
-  <%= order @search, :by => :title %> |
-  <%= order @search, :by => :price %> |
-  <%= order @search, :by => :created_at %>
-</p>
-
 <div id="product-list">
   <h1>Daftar Produk</h1>
   <table cellpadding="5" cellspacing="0">
@@ -52,9 +31,5 @@
   <% end %>  
   </table>
 </div>
-<br />
-<% if permitted_to? :create, Product.new %>  
-<%= link_to 'Bikin produk baru', new_product_path %>
-<% end %>
 
 
